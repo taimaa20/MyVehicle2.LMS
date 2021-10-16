@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace MyVehicle.LMS.CORE.Data
@@ -16,5 +17,9 @@ namespace MyVehicle.LMS.CORE.Data
         public string MessageTitle { get; set; }
         public DateTime MessageDate { get; set; }
         public int UserId { get; set; }
+
+        [ForeignKey("UserId")]
+
+        public virtual Users Users { get; set; }
     }
 }

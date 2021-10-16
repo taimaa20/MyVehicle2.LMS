@@ -14,5 +14,8 @@ namespace MyVehicle.LMS.CORE.Data
         public string EngineType { get; set; }
         public int NumberPassengers { get; set; }
         public double Cost { get; set; }
+
+        public ICollection<LicensingAndInsurance> LicensingAndInsurances
+        { get; set; }
     }
 }
