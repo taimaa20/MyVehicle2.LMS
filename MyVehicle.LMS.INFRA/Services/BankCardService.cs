@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MyVehicle.LMS.INFRA.Services
 {
-    class BankCardService
+    public  class BankCardService
     {
     }
 }
