@@ -20,28 +20,38 @@ namespace MyVehicle.LMS.API.Controllers
         }
 
         [HttpDelete ("delete")]
+        [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool DeleteUsers([FromBody] Users users)
         {
             return usersService.DeleteUsers(users);
         }
         [HttpGet]
         [Route("GetAllUsers")]
+        [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public List<Users> GetAllUsers()
         {
             return usersService.GetAllUsers();
         }
         [HttpGet]
         [Route("GetAllUsersById")]
+        [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public Users GetAllUsersById(Users users)
         {
             return usersService.GetAllUsersById(users);
         }
         [HttpPost]
+        [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool InsertUsers([FromBody] Users users)
         {
             return usersService.InsertUsers(users);
         }
         [HttpPut]
+        [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool UpdateUsers([FromBody] Users users)
         {
             return usersService.UpdateUsers(users);
