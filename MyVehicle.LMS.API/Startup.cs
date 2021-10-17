@@ -44,8 +44,13 @@ namespace MyVehicle.LMS.API
             services.AddScoped<IWebsiteSettingRepoisitory, WebsiteSettingRepoisitory>();
             services.AddScoped<IInsuranceRepoisitory, InsuranceRepoisitory>();
             services.AddScoped<ILicensingRepoisitory, LicensingRepoisitory>();
+            services.AddScoped<ITestimonialRepository, TestimonialRepository>(); 
+            services.AddScoped<INotificationRepository, NotificationRepository>();
+            services.AddScoped<IAttendanceRepository, AttendanceRepostiory>();
+            services.AddScoped<IAboutRepository, AboutRepository>();
+            services.AddScoped<ILicensingAndInsuranceRepository, LicensingAndInsuranceRepository>();
 
-       
+
             services.AddScoped<ICardService, CardService>();
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<IReportTypeService, ReportTypeService>();
@@ -57,16 +62,11 @@ namespace MyVehicle.LMS.API
             services.AddScoped<IInsuranceService, InsuranceService>();
             services.AddScoped<ILicensingService, LicensingService>();
 
-
-       
-
-
-
-
-
-
-
-
+            services.AddScoped<ITestimonialService, TestimonialService>();
+            services.AddScoped<INotificationService, NotificationService>();
+            services.AddScoped<IAttendanceService, AttendanceService>();
+            services.AddScoped<IAboutService, AboutService>();
+            services.AddScoped<ILicensingAndInsuranceService, LicensingAndInsuranceService>();
 
 
 
