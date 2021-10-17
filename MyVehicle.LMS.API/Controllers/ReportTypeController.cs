@@ -19,12 +19,15 @@ namespace MyVehicle.LMS.API.Controllers
             this.reportTypeService = reportTypeService;
         }
         [HttpDelete("delete")]
-
+        [ProducesResponseType(typeof(List<ReportType>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool DeleteReportType([FromBody] ReportType reportType)
         {
             return reportTypeService.DeleteReportType(reportType);
         }
         [HttpPost]
+        [ProducesResponseType(typeof(List<ReportType>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool InsertReportType([FromBody] ReportType reportType)
         {
             return reportTypeService.InsertReportType(reportType);
