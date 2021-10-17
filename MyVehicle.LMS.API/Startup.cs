@@ -39,12 +39,23 @@ namespace MyVehicle.LMS.API
             services.AddScoped<IRoleRepoisitory, RoleRepoisitory>();
             services.AddScoped<IUsersRepoisitory, UsersRepoisitory>();
 
+            services.AddScoped<ITestimonialRepository, TestimonialRepository>(); 
+            services.AddScoped<INotificationRepository, NotificationRepository>();
+            services.AddScoped<IAttendanceRepository, AttendanceRepostiory>();
+            services.AddScoped<IAboutRepository, AboutRepository>();
+            services.AddScoped<ILicensingAndInsuranceRepository, LicensingAndInsuranceRepository>();
 
             services.AddScoped<ICardService, CardService>();
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<IReportTypeService, ReportTypeService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IUsersService, UsersService>();
+
+            services.AddScoped<ITestimonialService, TestimonialService>();
+            services.AddScoped<INotificationService, NotificationService>();
+            services.AddScoped<IAttendanceService, AttendanceService>();
+            services.AddScoped<IAboutService, AboutService>();
+            services.AddScoped<ILicensingAndInsuranceService, LicensingAndInsuranceService>();
 
 
 
