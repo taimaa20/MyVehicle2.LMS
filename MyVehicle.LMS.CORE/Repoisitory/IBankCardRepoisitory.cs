@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MyVehicle.LMS.CORE.Repoisitory
 {
-    interface IBankCardRepoisitory
+ public   interface IBankCardRepoisitory
     {
     }
 }
