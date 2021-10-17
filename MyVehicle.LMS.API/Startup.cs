@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using MyVehicle.LMS.CORE.Common;
 using MyVehicle.LMS.CORE.Repoisitory;
 using MyVehicle.LMS.CORE.Services;
+
 using MyVehicle.LMS.INFRA.Common;
 using MyVehicle.LMS.INFRA.Repoisitory;
 using MyVehicle.LMS.INFRA.Services;
@@ -38,18 +39,28 @@ namespace MyVehicle.LMS.API
             services.AddScoped<IReportTypeRepoisitory, ReportTypeRepoisitory>();
             services.AddScoped<IRoleRepoisitory, RoleRepoisitory>();
             services.AddScoped<IUsersRepoisitory, UsersRepoisitory>();
-
+            services.AddScoped<IBankCardRepoisitory, BankCardRepoisitory>();
+            services.AddScoped<IReportRepoisitory, ReportRepoisitory>();
+            services.AddScoped<IWebsiteSettingRepoisitory, WebsiteSettingRepoisitory>();
+            services.AddScoped<IInsuranceRepoisitory, InsuranceRepoisitory>();
+            services.AddScoped<ILicensingRepoisitory, LicensingRepoisitory>();
             services.AddScoped<ITestimonialRepository, TestimonialRepository>(); 
             services.AddScoped<INotificationRepository, NotificationRepository>();
             services.AddScoped<IAttendanceRepository, AttendanceRepostiory>();
             services.AddScoped<IAboutRepository, AboutRepository>();
             services.AddScoped<ILicensingAndInsuranceRepository, LicensingAndInsuranceRepository>();
 
+
             services.AddScoped<ICardService, CardService>();
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<IReportTypeService, ReportTypeService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IUsersService, UsersService>();
+            services.AddScoped<IBankCardService, BankCardService>();
+            services.AddScoped<IReportService, ReportService>();
+            services.AddScoped<IWebsiteSettingService, WebsiteSettingService>();
+            services.AddScoped<IInsuranceService, InsuranceService>();
+            services.AddScoped<ILicensingService, LicensingService>();
 
             services.AddScoped<ITestimonialService, TestimonialService>();
             services.AddScoped<INotificationService, NotificationService>();
