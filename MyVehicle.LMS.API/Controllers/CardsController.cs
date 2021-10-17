@@ -19,30 +19,39 @@ namespace MyVehicle.LMS.API.Controllers
             this.cardService = cardService;
         }
         [HttpDelete("delete")]
-
+        [ProducesResponseType(typeof(List<Cards>),StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool DeleteCards([FromBody] Cards cards)
         {
             return cardService.DeleteCards(cards);
         }
         [HttpGet]
         [Route("GetAllCards")]
+        [ProducesResponseType(typeof(List<Cards>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public List<Cards> GetAllCards()
         {
             return cardService.GetAllCards();
         }
         [HttpGet]
         [Route("GetCardById")]
+        [ProducesResponseType(typeof(List<Cards>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public Cards GetCardById(Cards cards)
         {
             return cardService.GetCardById(cards);
         }
         [HttpPost]
+        [ProducesResponseType(typeof(List<Cards>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool InsertCards([FromBody] Cards cards)
         {
             return cardService.InsertCards(cards);
 
         }
         [HttpPut]
+        [ProducesResponseType(typeof(List<Cards>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool UpdateCards([FromBody] Cards cards)
         {
             return cardService.UpdateCards(cards);

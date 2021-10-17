@@ -19,23 +19,30 @@ namespace MyVehicle.LMS.API.Controllers
             this.contactService = contactService;
         }
         [HttpDelete("delete")]
-
+        [ProducesResponseType(typeof(List<Contact>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool DeleteContact([FromBody] Contact contact)
         {
             return contactService.DeleteContact(contact);
         }
         [HttpGet]
         [Route("GetAllContact")]
+        [ProducesResponseType(typeof(List<Contact>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public List<Contact> GetAllContact()
         {
             return contactService.GetAllContact();
         }
         [HttpPost]
+        [ProducesResponseType(typeof(List<Contact>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool InsertContact([FromBody] Contact contact)
         {
             return contactService.InsertContact(contact);
         }
         [HttpPut]
+        [ProducesResponseType(typeof(List<Contact>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool UpdateContact([FromBody] Contact contact)
         {
             return contactService.UpdateContact(contact);
