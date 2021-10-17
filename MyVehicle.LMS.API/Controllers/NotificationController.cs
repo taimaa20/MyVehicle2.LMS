@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +13,43 @@ namespace MyVehicle.LMS.API.Controllers
     [ApiController]
     public class NotificationController : ControllerBase
     {
+        private readonly INotificationService notificationService;
+        public NotificationController(INotificationService notificationService)
+        {
+            this.notificationService = notificationService;
+        }
+        [HttpDelete("delete")]
+        [ProducesResponseType(typeof(List<Notification>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public bool DeleteNotification(Notification notification)
+        {
+            return notificationService.DeleteNotification(notification);
+        }
+
+        [HttpGet]
+        [Route("GetAllNotification")]
+        [ProducesResponseType(typeof(List<Notification>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<Notification> GetAllNotification()
+        {
+            return notificationService.GetAllNotification();
+        }
+
+
+        [HttpPost]
+        [ProducesResponseType(typeof(List<Notification>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public bool InsertNotification([FromBody] Notification notification)
+        {
+            return notificationService.InsertNotification(notification);
+        }
+
+        [HttpPut]
+        [ProducesResponseType(typeof(List<Notification>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public bool UpdateNotification(Notification notification)
+        {
+            return notificationService.UpdateNotification(notification);
+        }
     }
 }
