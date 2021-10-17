@@ -7,7 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MyVehicle.LMS.CORE.Common;
+using MyVehicle.LMS.CORE.Repoisitory;
+using MyVehicle.LMS.CORE.Services;
 using MyVehicle.LMS.INFRA.Common;
+using MyVehicle.LMS.INFRA.Repoisitory;
+using MyVehicle.LMS.INFRA.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +33,21 @@ namespace MyVehicle.LMS.API
         {
             services.AddControllers();
             services.AddScoped<IDBContext, DBContext>();
+            services.AddScoped<ICardsRepoisitory, CardsRepoisitory>();
+            services.AddScoped<IContactRepoisitory, ContactRepoisitory>();
+            services.AddScoped<IReportTypeRepoisitory, ReportTypeRepoisitory>();
+            services.AddScoped<IRoleRepoisitory, RoleRepoisitory>();
+            services.AddScoped<IUsersRepoisitory, UsersRepoisitory>();
+
+
+            services.AddScoped<ICardService, CardService>();
+            services.AddScoped<IContactService, ContactService>();
+            services.AddScoped<IReportTypeService, ReportTypeService>();
+            services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped<IUsersService, UsersService>();
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

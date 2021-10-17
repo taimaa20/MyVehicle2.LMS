@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MyVehicle.LMS.INFRA.Repoisitory
 {
-    class BankCardRepoisitory
+  public  class BankCardRepoisitory
     {
     }
 }
