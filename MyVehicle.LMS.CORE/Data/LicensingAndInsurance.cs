@@ -13,14 +13,16 @@ namespace MyVehicle.LMS.CORE.Data
         public double Value { get; set; }
         public int LicensingId { get; set; }
         public int InsuranceId { get; set; }
+        public int VehicleId { get; set; }
 
         [ForeignKey("LicensingId")]
-
         public virtual Licensing Licensing { get; set; }
 
         [ForeignKey("InsuranceId")]
-
         public virtual Insurance Insurance { get; set; }
-        public ICollection<Vehicles> Vehicles { get; set; }
+
+        [ForeignKey("VehicleId")]
+        public virtual Vehicles Vehicles { get; set; }
+
     }
 }
