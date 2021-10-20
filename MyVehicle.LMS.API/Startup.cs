@@ -54,7 +54,8 @@ namespace MyVehicle.LMS.API
             services.AddScoped<IPermissionsRepoisitory, PermissionsRepoisitory>();
             services.AddScoped<IMessageRepoisitory, MessageRepoisitory>();
             services.AddScoped<ITaskJobRepoisitory, TaskJobRepoisitory>();
-
+            services.AddScoped<ISalaryRepoisitory,SalaryRepoisitory>();
+            services.AddScoped<IImagesRepository, ImagesRepository>();
 
             services.AddScoped<ICardService, CardService>();
             services.AddScoped<IContactService, ContactService>();
@@ -77,6 +78,8 @@ namespace MyVehicle.LMS.API
             services.AddScoped<IPermissionsService, PermissionsService>();
             services.AddScoped<IMessageService, MessageService>();
             services.AddScoped<ITaskJobServices, TaskJobServices>();
+            services.AddScoped<ISalaryService, SalaryService>();
+            services.AddScoped<IImagesService, ImagesService>();
 
 
 
