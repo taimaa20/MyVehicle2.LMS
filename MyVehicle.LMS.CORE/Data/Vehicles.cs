@@ -26,14 +26,12 @@ namespace MyVehicle.LMS.CORE.Data
         public string EngineNumber { get; set; }
         public string Address { get; set; }
         public int UserId { get; set; }
-        public int LicenseValueId { get; set; }
+
 
         [ForeignKey("UserId")]
-
         public virtual Users Users { get; set; }
 
-        [ForeignKey("LicenseValueId")]
+        public ICollection<LicensingAndInsurance> LicensingAndInsurance { get; set; }
 
-        public virtual LicensingAndInsurance LicensingAndInsurance { get; set; }
     }
 }
