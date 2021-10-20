@@ -11,6 +11,7 @@ namespace MyVehicle.LMS.CORE.Services
         public bool UpdateImages(Images images);
         public bool DeleteImages(Images images);
         public List<Images> GetAllImages();
+        public Images GetImagesById(Images images);
 
     }
 }
