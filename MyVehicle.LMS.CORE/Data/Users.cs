@@ -16,7 +16,11 @@ namespace MyVehicle.LMS.CORE.Data
         public int Age { get; set; }
         public string Email { get; set; }
         public int PhoneNumber { get; set; }
+
         
+
+  
+
         public string Address { get; set; }
    
         
@@ -38,7 +42,11 @@ namespace MyVehicle.LMS.CORE.Data
         public ICollection<Report> Reports { get; set; }
         public ICollection<TaskJob> TaskJobs { get; set; }
         public ICollection<Vehicles> Vehicles { get; set; }
+
         public ICollection<Payment> Payments  { get; set; }
         public ICollection<Login> Logins  { get; set; }
+
+        public ICollection<Salary1> Salary1s { get; set; }
+
     }
 }
