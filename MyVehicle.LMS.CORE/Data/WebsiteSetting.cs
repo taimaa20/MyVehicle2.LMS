@@ -21,5 +21,6 @@ namespace MyVehicle.LMS.CORE.Data
         public ICollection<Review> Reviews { get; set; }
         public ICollection<Testimonial> Testimonials { get; set; }
         public ICollection<Users> Users { get; set; }
+        public ICollection<Images> Images { get; set; }
     }
 }
