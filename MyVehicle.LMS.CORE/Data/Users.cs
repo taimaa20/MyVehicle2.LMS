@@ -16,16 +16,20 @@ namespace MyVehicle.LMS.CORE.Data
         public int Age { get; set; }
         public string Email { get; set; }
         public int PhoneNumber { get; set; }
+
+        
+
   
+
         public string Address { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public int RoleId { get; set; }
+   
+        
         public int SettingId { get; set; }
+        public int loginId { get; set; }
 
-        [ForeignKey("RoleId")]
+        [ForeignKey("loginId")]
 
-        public virtual Role Role { get; set; }
+        public virtual Login Login  { get; set; }
 
         [ForeignKey("SettingId")]
 
@@ -38,6 +42,11 @@ namespace MyVehicle.LMS.CORE.Data
         public ICollection<Report> Reports { get; set; }
         public ICollection<TaskJob> TaskJobs { get; set; }
         public ICollection<Vehicles> Vehicles { get; set; }
+
+        public ICollection<Payment> Payments  { get; set; }
+        public ICollection<Login> Logins  { get; set; }
+
         public ICollection<Salary1> Salary1s { get; set; }
+
     }
 }

@@ -13,7 +13,8 @@ namespace MyVehicle.LMS.CORE.Data
 
         public ICollection<Permissions> Permissions { get; set; }
         public ICollection<Report> Reports { get; set; }
-        public ICollection<Users> Users { get; set; }
+        
+        public ICollection<Login> Logins { get; set; }
 
     }
 }
