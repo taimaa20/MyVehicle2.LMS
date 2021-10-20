@@ -53,6 +53,14 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             var Reselt = dBContext.Connection.ExecuteAsync("InsertImages", Parameters, commandType: CommandType.StoredProcedure);
             return true;
         }
-     
+
+        public Images GetImagesById(Images images)
+        {
+            var Parameter = new DynamicParameters();
+            Parameter.Add("@ImagesId", images.ImagesId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+
+            var reselt = dBContext.Connection.Query<Images>("GetImagesById", Parameter, commandType: CommandType.StoredProcedure);
+            return reselt.FirstOrDefault();
+        }
     }
 }

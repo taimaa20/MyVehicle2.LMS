@@ -26,6 +26,11 @@ namespace MyVehicle.LMS.INFRA.Services
             return imagesRepoisitory.GetAllImages();
         }
 
+        public Images GetImagesById(Images images)
+        {
+            return imagesRepoisitory.GetImagesById(images);
+        }
+
         public bool InsertImages(Images images)
         {
             return imagesRepoisitory.InsertImages(images);

@@ -51,5 +51,13 @@ namespace MyVehicle.LMS.API.Controllers
         {
             return imagesService.UpdateImages(images);
         }
+        [HttpGet]
+        [Route("GetImageById")]
+        [ProducesResponseType(typeof(List<Images>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public Images GetImagesById(Images images)
+        {
+            return imagesService.GetImagesById(images);
+        }
     }
 }
