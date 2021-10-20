@@ -54,8 +54,10 @@ namespace MyVehicle.LMS.API
             services.AddScoped<IPermissionsRepoisitory, PermissionsRepoisitory>();
             services.AddScoped<IMessageRepoisitory, MessageRepoisitory>();
             services.AddScoped<ITaskJobRepoisitory, TaskJobRepoisitory>();
+            services.AddScoped<IPaymentRepoisitory, PaymentRepoisitory>();
+            services.AddScoped<ILoginRepoisitory, LoginRepoisitory>();
 
-
+        
             services.AddScoped<ICardService, CardService>();
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<IReportTypeService, ReportTypeService>();
@@ -77,9 +79,11 @@ namespace MyVehicle.LMS.API
             services.AddScoped<IPermissionsService, PermissionsService>();
             services.AddScoped<IMessageService, MessageService>();
             services.AddScoped<ITaskJobServices, TaskJobServices>();
+            services.AddScoped<IPaymentService, PaymentService>();
+            services.AddScoped<ILoginService, LoginService>();
 
 
-
+       
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

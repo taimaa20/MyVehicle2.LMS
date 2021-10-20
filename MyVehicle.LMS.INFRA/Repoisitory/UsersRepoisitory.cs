@@ -52,12 +52,12 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             Parameters.Add("@Age", users.Age, dbType: DbType.Int32, direction: ParameterDirection.Input);
             Parameters.Add("@Email", users.Email, dbType: DbType.String, direction: ParameterDirection.Input);
             Parameters.Add("@PhoneNumber", users.PhoneNumber, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            Parameters.Add("@Salary", users.Salary, dbType: DbType.Double, direction: ParameterDirection.Input);
+            
             Parameters.Add("@Address", users.Address, dbType: DbType.String, direction: ParameterDirection.Input);
-            Parameters.Add("@Username", users.Username, dbType: DbType.String, direction: ParameterDirection.Input);
-            Parameters.Add("@Password", users.Password, dbType: DbType.String, direction: ParameterDirection.Input);
-            Parameters.Add("@RoleId", users.RoleId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            
+            
             Parameters.Add("@SettingId", users.SettingId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameters.Add("@loginId", users.loginId, dbType: DbType.Int32, direction: ParameterDirection.Input);
             var Reselt = dBContext.Connection.ExecuteAsync("InsertUsers", Parameters, commandType: CommandType.StoredProcedure);
             return true;
 
@@ -74,12 +74,12 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             Parameters.Add("@Age", users.Age, dbType: DbType.Int32, direction: ParameterDirection.Input);
             Parameters.Add("@Email", users.Email, dbType: DbType.String, direction: ParameterDirection.Input);
             Parameters.Add("@PhoneNumber", users.PhoneNumber, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            Parameters.Add("@Salary", users.Salary, dbType: DbType.Double, direction: ParameterDirection.Input);
+            
             Parameters.Add("@Address", users.Address, dbType: DbType.String, direction: ParameterDirection.Input);
-            Parameters.Add("@Username", users.Username, dbType: DbType.String, direction: ParameterDirection.Input);
-            Parameters.Add("@Password", users.Password, dbType: DbType.String, direction: ParameterDirection.Input);
-            Parameters.Add("@RoleId", users.RoleId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            
+            
             Parameters.Add("@SettingId", users.SettingId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameters.Add("@loginId", users.loginId, dbType: DbType.Int32, direction: ParameterDirection.Input);
             var Reselt = dBContext.Connection.ExecuteAsync("UpdateUsers", Parameters, commandType: CommandType.StoredProcedure);
             return true;
         }

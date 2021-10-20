@@ -25,6 +25,7 @@ namespace MyVehicle.LMS.CORE.Data
         public string ChassisNumber { get; set; }
         public string EngineNumber { get; set; }
         public string Address { get; set; }
+        public string VehicleImage { get; set; }
         public int UserId { get; set; }
 
 

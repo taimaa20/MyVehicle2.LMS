@@ -35,8 +35,9 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             VehParameter.Add("@ChassisNumber", Veh.ChassisNumber, dbType: DbType.String, direction: ParameterDirection.Input);
             VehParameter.Add("@EngineNumber", Veh.EngineNumber, dbType: DbType.String, direction: ParameterDirection.Input);
             VehParameter.Add("@Address", Veh.Address, dbType: DbType.String, direction: ParameterDirection.Input);
+            VehParameter.Add("@VehicleImage", Veh.VehicleImage, dbType: DbType.String, direction: ParameterDirection.Input);
             VehParameter.Add("@UserId", Veh.UserId, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            VehParameter.Add("@LicenseValueId", Veh.LicenseValueId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            
             var Result = dBContext.Connection.ExecuteAsync("InsertVehicles", VehParameter, commandType: CommandType.StoredProcedure);
             return true;
 
@@ -60,8 +61,9 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             VehParameter.Add("@ChassisNumber", Veh.ChassisNumber, dbType: DbType.String, direction: ParameterDirection.Input);
             VehParameter.Add("@EngineNumber", Veh.EngineNumber, dbType: DbType.String, direction: ParameterDirection.Input);
             VehParameter.Add("@Address", Veh.Address, dbType: DbType.String, direction: ParameterDirection.Input);
+            VehParameter.Add("@VehicleImage", Veh.VehicleImage, dbType: DbType.String, direction: ParameterDirection.Input);
             VehParameter.Add("@UserId", Veh.UserId, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            VehParameter.Add("@LicenseValueId", Veh.LicenseValueId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            
             var Result = dBContext.Connection.ExecuteAsync("InsertVehicles", VehParameter, commandType: CommandType.StoredProcedure);
             return true;
         }
