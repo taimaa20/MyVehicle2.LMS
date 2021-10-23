@@ -14,6 +14,11 @@ namespace MyVehicle.LMS.CORE.Services
         public List<Users> GetAllUsers();
         public Users GetAllUsersById(Users users);
 
+        public List<GetDrivingLicenseDTO> GetDrivingLicense();
+        public List<ObtainFinancialReportsDTO> ObtainFinancialReports();
+        public List<ViewUserContactInformationDTO> ViewUserContactInformation(DateTime PaymentDate);
+
+
         //Retrieve Number of users //Admin
         public IEnumerable<NumberOfUsers> NumberOfUsers();
 
@@ -25,5 +30,6 @@ namespace MyVehicle.LMS.CORE.Services
 
         //Search By UserId  //Users
         public List<VehiclesUsers> SearchByUserId(SearchByUserId searchByUserId);
+
     }
 }

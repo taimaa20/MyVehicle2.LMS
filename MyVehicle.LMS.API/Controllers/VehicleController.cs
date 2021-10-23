@@ -21,30 +21,40 @@ namespace MyVehicle.LMS.API.Controllers
         }
         [HttpPost]
         [Route("InsertVehicles")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool InsertVehicles([FromBody]Vehicles Veh)
         {
             return vehicleService.InsertVehicles(Veh);
         }
         [HttpPut]
         [Route("UpdateVehicles")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool UpdateVehicles(Vehicles Veh)
         {
             return vehicleService.UpdateVehicles(Veh);
         }
         [HttpDelete]
         [Route("DeleteVehicles")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool DeleteVehicles(int VehicleId)
         {
             return vehicleService.DeleteVehicles(VehicleId);
         }
         [HttpGet]
         [Route("GetAllVehicles")]
+        [ProducesResponseType(typeof(List<Vehicles>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public List<Vehicles> GetAllVehicles()
         {
             return vehicleService.GetAllVehicles();
         }
         [HttpGet]
         [Route("GetVehicleById/{VehicleId}")]
+        [ProducesResponseType(typeof(Vehicles), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public Vehicles GetVehicleById(int VehicleId)
         {
             return vehicleService.GetVehicleById(VehicleId);

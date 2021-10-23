@@ -59,6 +59,31 @@ namespace MyVehicle.LMS.API.Controllers
         }
 
         [HttpGet]
+        [Route("GetDrivingLicense")]
+        [ProducesResponseType(typeof(List<GetDrivingLicenseDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<GetDrivingLicenseDTO> GetDrivingLicense()
+        {
+            return usersService.GetDrivingLicense();
+        }
+        [HttpGet]
+        [Route("ObtainFinancialReports")]
+        [ProducesResponseType(typeof(List<ObtainFinancialReportsDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<ObtainFinancialReportsDTO> ObtainFinancialReports()
+        {
+            return usersService.ObtainFinancialReports();
+        }
+        [HttpGet]
+        [Route("ViewUserContactInformation/{PaymentDate}")]
+        [ProducesResponseType(typeof(List<ViewUserContactInformationDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<ViewUserContactInformationDTO> ViewUserContactInformation(DateTime PaymentDate)
+        {
+            return usersService.ViewUserContactInformation(PaymentDate);
+
+
+        [HttpGet]
         [Route("NumberOfUsers")]
         [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -95,6 +120,7 @@ namespace MyVehicle.LMS.API.Controllers
         public List<VehiclesUsers> SearchByUserId(SearchByUserId searchByUserId)
         {
             return usersService.SearchByUserId(searchByUserId);
+
         }
     }
 }
