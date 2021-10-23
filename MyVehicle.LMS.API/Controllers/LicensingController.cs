@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Services;
 using System;
 using System.Collections.Generic;
@@ -44,5 +45,15 @@ namespace MyVehicle.LMS.API.Controllers
         {
             return licensingService.UpdateLicensing(licensing);
         }
+        [HttpPost]
+        [Route("SearchLicensingCost")]
+
+        [ProducesResponseType(typeof(List<PaymentCost>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public PaymentCost SearchLicensingCost(SearchLicensingCostByEngineCapasty searchLicensingCostByEngineCapasty)
+        {
+            return licensingService.SearchLicensingCost(searchLicensingCostByEngineCapasty);
+        }
+
     }
 }

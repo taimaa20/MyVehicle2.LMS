@@ -1,4 +1,5 @@
 ﻿using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using MyVehicle.LMS.CORE.Services;
 using System;
@@ -23,6 +24,11 @@ namespace MyVehicle.LMS.INFRA.Services
         public bool InsertLicensing(Licensing licensing)
         {
             return licensingRepoisitory.InsertLicensing(licensing);
+        }
+
+        public PaymentCost SearchLicensingCost(SearchLicensingCostByEngineCapasty searchLicensingCostByEngineCapasty)
+        {
+            return licensingRepoisitory.SearchLicensingCost(searchLicensingCostByEngineCapasty);
         }
 
         public bool UpdateLicensing(Licensing licensing)
