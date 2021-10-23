@@ -81,7 +81,7 @@ namespace MyVehicle.LMS.API.Controllers
         public List<ViewUserContactInformationDTO> ViewUserContactInformation(DateTime PaymentDate)
         {
             return usersService.ViewUserContactInformation(PaymentDate);
-
+        }
 
         [HttpGet]
         [Route("NumberOfUsers")]
