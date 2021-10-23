@@ -11,7 +11,7 @@ namespace MyVehicle.LMS.INFRA.Services
     public class AboutService : IAboutService
     {
         private readonly IAboutRepository aboutRepository;
-        public AboutService(AboutRepository aboutRepository)
+        public AboutService(IAboutRepository aboutRepository)
         {
             this.aboutRepository = aboutRepository;
         }

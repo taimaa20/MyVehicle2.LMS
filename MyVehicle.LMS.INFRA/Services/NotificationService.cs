@@ -11,7 +11,7 @@ namespace MyVehicle.LMS.INFRA.Services
   public   class NotificationService: INotificationService
     {
         private readonly INotificationRepository notificationRepository;
-        public NotificationService(NotificationRepository notificationRepository)
+        public NotificationService(INotificationRepository notificationRepository)
         {
             this.notificationRepository = notificationRepository;
         }

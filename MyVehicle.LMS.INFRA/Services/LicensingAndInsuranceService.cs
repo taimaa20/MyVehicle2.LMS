@@ -11,7 +11,7 @@ namespace MyVehicle.LMS.INFRA.Services
   public   class LicensingAndInsuranceService: ILicensingAndInsuranceService
     {
         private readonly ILicensingAndInsuranceRepository licensingAndInsuranceRepository;
-        public LicensingAndInsuranceService(LicensingAndInsuranceRepository licensingAndInsuranceRepository)
+        public LicensingAndInsuranceService(ILicensingAndInsuranceRepository licensingAndInsuranceRepository)
         {
             this.licensingAndInsuranceRepository = licensingAndInsuranceRepository;
         }

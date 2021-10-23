@@ -11,7 +11,7 @@ namespace MyVehicle.LMS.INFRA.Services
     public class TestimonialService: ITestimonialService
     {
         private readonly ITestimonialRepository testimonialRepository;
-        public TestimonialService(TestimonialRepository testimonialRepository)
+        public TestimonialService(ITestimonialRepository testimonialRepository)
         {
             this.testimonialRepository = testimonialRepository;
         }

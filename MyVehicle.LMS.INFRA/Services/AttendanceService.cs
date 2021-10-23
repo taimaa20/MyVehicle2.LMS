@@ -11,7 +11,7 @@ namespace MyVehicle.LMS.INFRA.Services
   public  class AttendanceService: IAttendanceService
     {
         private readonly IAttendanceRepository attendanceRepository;
-        public AttendanceService(AttendanceRepostiory attendanceRepository)
+        public AttendanceService(IAttendanceRepository attendanceRepository)
         {
             this.attendanceRepository = attendanceRepository;
         }

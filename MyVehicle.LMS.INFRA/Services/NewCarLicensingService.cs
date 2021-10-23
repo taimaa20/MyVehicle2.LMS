@@ -11,7 +11,7 @@ namespace MyVehicle.LMS.INFRA.Services
    public class NewCarLicensingService: INewCarLicensingService
     {
         private readonly INewCarLicensingRepository newCarLicensingRepository;
-        public NewCarLicensingService(NewCarLicensingRepository newCarLicensingRepository)
+        public NewCarLicensingService(INewCarLicensingRepository newCarLicensingRepository)
         {
             this.newCarLicensingRepository = newCarLicensingRepository;
         }
