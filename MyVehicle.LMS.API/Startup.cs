@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -6,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using MyVehicle.LMS.CORE.Common;
 using MyVehicle.LMS.CORE.Repoisitory;
 using MyVehicle.LMS.CORE.Services;
@@ -16,6 +18,7 @@ using MyVehicle.LMS.INFRA.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace MyVehicle.LMS.API
@@ -32,6 +35,30 @@ namespace MyVehicle.LMS.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+
+
+            }).AddJwtBearer(y =>
+            {
+                y.RequireHttpsMetadata = false;
+                y.SaveToken = true;
+                y.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("[SECRET USED TO SIGN AND VERIFY JWT TOKENS, IT CAN BE ANY STRING]")),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+dd JWT
+
+
+                };
+            });
+
             services.AddControllers();
             services.AddScoped<IDBContext, DBContext>();
             services.AddScoped<ICardsRepoisitory, CardsRepoisitory>();
@@ -62,8 +89,9 @@ namespace MyVehicle.LMS.API
 
             services.AddScoped<ISalaryRepoisitory,SalaryRepoisitory>();
             services.AddScoped<IImagesRepository, ImagesRepository>();
+            services.AddScoped<IJwtRepository, JwtRepository>();
 
-
+        
             services.AddScoped<ICardService, CardService>();
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<IReportTypeService, ReportTypeService>();
@@ -85,16 +113,12 @@ namespace MyVehicle.LMS.API
             services.AddScoped<IPermissionsService, PermissionsService>();
             services.AddScoped<IMessageService, MessageService>();
             services.AddScoped<ITaskJobServices, TaskJobServices>();
-
             services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<ILoginService, LoginService>();
-
             services.AddScoped<ISalaryService, SalaryService>();
             services.AddScoped<IImagesService, ImagesService>();
+            services.AddScoped<IJwtService, JwtService>();
 
-
-
-       
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -20,25 +20,32 @@ namespace MyVehicle.LMS.API.Controllers
         }
         [HttpPost]
         [Route("InsertTaskJob")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool InsertTaskJob([FromBody]TaskJob Task)
         {
             return taskJobServices.InsertTaskJob(Task);
         }
         [HttpPut]
         [Route("UpdateTaskJob")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool UpdateTaskJob(TaskJob Task)
         {
             return taskJobServices.UpdateTaskJob(Task);
         }
         [HttpDelete]
         [Route("DeleteTaskJob")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool DeleteTaskJob(int TaskId)
         {
             return taskJobServices.DeleteTaskJob(TaskId);
         }
         [HttpGet]
         [Route("GetAllTaskJob")]
-
+        [ProducesResponseType(typeof(List<TaskJob>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public List<TaskJob> GetAllTaskJob()
         {
             return taskJobServices.GetAllTaskJob();
