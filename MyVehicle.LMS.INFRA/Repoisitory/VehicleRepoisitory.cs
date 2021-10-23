@@ -111,6 +111,24 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return result.ToList();
 
         }
+
+        public List<VehicleSystemReport> VehicleSystemReport()
+        {
+            IEnumerable<VehicleSystemReport>
+        Result = dBContext.Connection.Query<VehicleSystemReport>("VehicleSystemReport", commandType: CommandType.StoredProcedure);
+            return Result.ToList();
+        }
+
+        public List<VehicleSystemReportBetween> VehicleSystemReportBetween(VehicleSystemReportBetween vehicleSystemReportBetween)
+        {
+            var VehParameter = new DynamicParameters();
+            VehParameter.Add("@StartPaymentDate", vehicleSystemReportBetween.StartPaymentDate, dbType: DbType.DateTime, direction: System.Data.ParameterDirection.Input);
+            VehParameter.Add("@EndPaymentDate", vehicleSystemReportBetween.EndPaymentDate, dbType: DbType.DateTime, direction: System.Data.ParameterDirection.Input);
+
+            IEnumerable<VehicleSystemReportBetween> result = dBContext.Connection.Query<VehicleSystemReportBetween>("VehicleSystemReportBetween", VehParameter, commandType: CommandType.StoredProcedure);
+
+            return result.ToList();
+        }
     }
 }
 

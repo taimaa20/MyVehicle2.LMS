@@ -18,6 +18,16 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
         {
             this.dBContext = dBContext;
         }
+
+        public IEnumerable<CountUserCars> CountUserCars(int id)
+        {
+                var par = new DynamicParameters();
+                par.Add("@UserId", id, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
+                IEnumerable<CountUserCars> result = dBContext.Connection.Query<CountUserCars>("CountUserCars", commandType: CommandType.StoredProcedure);
+                return result.ToList();
+
+        }
+
         public bool DeleteUsers(Users users)
         {
             var Parameters = new DynamicParameters();

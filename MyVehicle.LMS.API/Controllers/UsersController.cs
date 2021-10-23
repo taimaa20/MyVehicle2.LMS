@@ -96,5 +96,14 @@ namespace MyVehicle.LMS.API.Controllers
         {
             return usersService.SearchByUserId(searchByUserId);
         }
+        [HttpGet]
+        [Route("customeritembuyer/{id}")]
+        [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IEnumerable<CountUserCars> CountUserCars(int id)
+        {
+            return usersService.CountUserCars(id);
+
+        }
     }
 }

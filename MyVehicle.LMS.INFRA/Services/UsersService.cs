@@ -16,6 +16,11 @@ namespace MyVehicle.LMS.INFRA.Services
             this.usersRepoisitory = usersRepoisitory;
         }
 
+        public IEnumerable<CountUserCars> CountUserCars(int id)
+        {
+            return usersRepoisitory.CountUserCars(id);
+        }
+
         public bool DeleteUsers(Users users)
         {
             return usersRepoisitory.DeleteUsers(users);
