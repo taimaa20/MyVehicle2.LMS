@@ -11,7 +11,7 @@ namespace MyVehicle.LMS.INFRA.Services
      public class ImagesService: IImagesService
     {
         private readonly IImagesRepository imagesRepoisitory;
-        public ImagesService(ImagesRepository imagesRepoisitory)
+        public ImagesService(IImagesRepository imagesRepoisitory)
         {
             this.imagesRepoisitory = imagesRepoisitory;
         }

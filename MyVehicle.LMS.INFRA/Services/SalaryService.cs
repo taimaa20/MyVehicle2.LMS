@@ -12,7 +12,7 @@ namespace MyVehicle.LMS.INFRA.Services
   public  class SalaryService: ISalaryService
     {
         private readonly ISalaryRepoisitory salaryRepoisitory;
-        public SalaryService(SalaryRepoisitory salaryRepoisitory)
+        public SalaryService(ISalaryRepoisitory salaryRepoisitory)
         {
             this.salaryRepoisitory = salaryRepoisitory;
         }

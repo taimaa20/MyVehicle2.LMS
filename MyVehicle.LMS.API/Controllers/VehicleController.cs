@@ -74,7 +74,7 @@ namespace MyVehicle.LMS.API.Controllers
         [Route("SearchByVehicleCategory")]
         [ProducesResponseType(typeof(List<VehiclesUsersLicenseExpiry>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public List<VehiclesUsers> SearchByVehicleCategory(SearchByVehicleCategory searchByVehicleCategory)
+        public List<VehiclesUsers> SearchByVehicleCategory([FromBody]SearchByVehicleCategory searchByVehicleCategory)
         {
             return vehicleService.SearchByVehicleCategory(searchByVehicleCategory);
         }
