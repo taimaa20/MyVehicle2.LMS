@@ -57,6 +57,7 @@ namespace MyVehicle.LMS.API.Controllers
         {
             return usersService.UpdateUsers(users);
         }
+
         [HttpGet]
         [Route("GetDrivingLicense")]
         [ProducesResponseType(typeof(List<GetDrivingLicenseDTO>), StatusCodes.Status200OK)]
@@ -80,6 +81,46 @@ namespace MyVehicle.LMS.API.Controllers
         public List<ViewUserContactInformationDTO> ViewUserContactInformation(DateTime PaymentDate)
         {
             return usersService.ViewUserContactInformation(PaymentDate);
+
+
+        [HttpGet]
+        [Route("NumberOfUsers")]
+        [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IEnumerable<NumberOfUsers> NumberOfUsers()
+        {
+            return usersService.NumberOfUsers();
+        }
+
+        [HttpGet]
+        [Route("NumberOfEmployees")]
+        [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IEnumerable<NumberOfEmployees> NumberOfEmployees()
+        {
+            return usersService.NumberOfEmployees();
+
+        }
+
+
+        [HttpGet]
+        [Route("EmployeesSalaries")]
+        [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<EmployeesSalaries> EmployeesSalaries()
+        {
+            return usersService.EmployeesSalaries();
+        }
+
+
+        [HttpPost]
+        [Route("SearchByUserId")]
+        [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<VehiclesUsers> SearchByUserId(SearchByUserId searchByUserId)
+        {
+            return usersService.SearchByUserId(searchByUserId);
+
         }
     }
 }

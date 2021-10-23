@@ -13,8 +13,23 @@ namespace MyVehicle.LMS.CORE.Services
         public bool DeleteUsers(Users users);
         public List<Users> GetAllUsers();
         public Users GetAllUsersById(Users users);
+
         public List<GetDrivingLicenseDTO> GetDrivingLicense();
         public List<ObtainFinancialReportsDTO> ObtainFinancialReports();
         public List<ViewUserContactInformationDTO> ViewUserContactInformation(DateTime PaymentDate);
+
+
+        //Retrieve Number of users //Admin
+        public IEnumerable<NumberOfUsers> NumberOfUsers();
+
+        //Retrieve Number of Employee //Admin
+        public IEnumerable<NumberOfEmployees> NumberOfEmployees();
+
+        //Retrieve Employees Salaries //Admin
+        public List<EmployeesSalaries> EmployeesSalaries();
+
+        //Search By UserId  //Users
+        public List<VehiclesUsers> SearchByUserId(SearchByUserId searchByUserId);
+
     }
 }

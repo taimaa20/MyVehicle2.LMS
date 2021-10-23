@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Services;
 using System;
 using System.Collections.Generic;
@@ -58,6 +59,26 @@ namespace MyVehicle.LMS.API.Controllers
         {
             return vehicleService.GetVehicleById(VehicleId);
         }
-       
+
+        [HttpPost]
+        [Route("SearchingForVehiclesLicenseExpiry")]
+        [ProducesResponseType(typeof(List<VehiclesUsersLicenseExpiry>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<VehiclesUsersLicenseExpiry> SearchingForVehiclesLicenseExpiry([FromBody]SearchingForVehiclesLicenseExpiry searchingForVehiclesLicenseExpiry)
+        {
+            return vehicleService.SearchingForVehiclesLicenseExpiry(searchingForVehiclesLicenseExpiry);
+        }
+
+
+        [HttpPost]
+        [Route("SearchByVehicleCategory")]
+        [ProducesResponseType(typeof(List<VehiclesUsersLicenseExpiry>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<VehiclesUsers> SearchByVehicleCategory(SearchByVehicleCategory searchByVehicleCategory)
+        {
+            return vehicleService.SearchByVehicleCategory(searchByVehicleCategory);
+        }
     }
+
 }
+

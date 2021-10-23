@@ -1,4 +1,5 @@
 ﻿using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,5 +13,8 @@ namespace MyVehicle.LMS.CORE.Repoisitory
         public bool DeleteSalary(Salary1 salary);
         public List<Salary1> GetAllSalary();
         public Salary1 GetSalaryById(Salary1 salary);
+
+        //Get Total Month Salaries For Employees //Admin
+        public IEnumerable<TotalMonthSalaries> TotalMonthSalaries(SearchByMonthSalary searchByMonthSalary);
     }
 }
