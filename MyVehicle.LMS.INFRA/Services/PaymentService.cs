@@ -1,4 +1,5 @@
 ﻿using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using MyVehicle.LMS.CORE.Services;
 using System;
@@ -27,6 +28,16 @@ namespace MyVehicle.LMS.INFRA.Services
         public Payment GetAllPaymentsById(Payment payment)
         {
             return paymentRepoisitory.GetAllPaymentsById(payment);
+        }
+
+        public NumberOfPayment GetCountPayment()
+        {
+            return paymentRepoisitory.GetCountPayment();
+        }
+
+        public List<TotalPayment> GetTotalPaymentInDay(SearchByPaymantDate searchByPaymantDate)
+        {
+            return paymentRepoisitory.GetTotalPaymentInDay(searchByPaymantDate);
         }
 
         public bool InsertPayment(Payment payment)

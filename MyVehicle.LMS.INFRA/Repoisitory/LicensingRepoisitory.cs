@@ -47,7 +47,7 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
         public PaymentCost SearchLicensingCost(SearchLicensingCostByEngineCapasty searchLicensingCostByEngineCapasty)
         {
             var Parameter = new DynamicParameters();
-            Parameter.Add("@EngineCapasty", searchLicensingCostByEngineCapasty.EngineCapasty, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
+            Parameter.Add("@EngineCapasty", searchLicensingCostByEngineCapasty.EngineCapasty, dbType: DbType.Double, direction: System.Data.ParameterDirection.Input);
 
            var result = dBContext.Connection.Query<PaymentCost>("SearchLicensingCost", Parameter, commandType: CommandType.StoredProcedure);
 

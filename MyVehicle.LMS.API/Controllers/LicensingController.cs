@@ -50,7 +50,7 @@ namespace MyVehicle.LMS.API.Controllers
 
         [ProducesResponseType(typeof(List<PaymentCost>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public PaymentCost SearchLicensingCost(SearchLicensingCostByEngineCapasty searchLicensingCostByEngineCapasty)
+        public PaymentCost SearchLicensingCost([FromBody] SearchLicensingCostByEngineCapasty searchLicensingCostByEngineCapasty)
         {
             return licensingService.SearchLicensingCost(searchLicensingCostByEngineCapasty);
         }

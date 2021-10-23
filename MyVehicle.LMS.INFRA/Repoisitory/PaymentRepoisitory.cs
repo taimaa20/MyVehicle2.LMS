@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using MyVehicle.LMS.CORE.Common;
 using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,12 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return result.FirstOrDefault();
         }
 
+        public NumberOfPayment GetCountPayment()
+        {
+            var result = dBContext.Connection.Query<NumberOfPayment>("GetCountPayment", commandType: CommandType.StoredProcedure);
+            return result.FirstOrDefault();
+        }
+
         public bool InsertPayment(Payment payment)
         {
             var parameters = new DynamicParameters();
@@ -50,6 +57,15 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             
             var result = dBContext.Connection.ExecuteAsync("InsertPayment", parameters, commandType: CommandType.StoredProcedure);
             return true;
+        }
+
+        public List<TotalPayment> GetTotalPaymentInDay(SearchByPaymantDate searchByPaymantDate)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@PaymantDate", searchByPaymantDate.PaymantDate, dbType: System.Data.DbType.DateTime, direction: System.Data.ParameterDirection.Input);
+            IEnumerable<TotalPayment> reselt = dBContext.Connection.Query<TotalPayment>("GetTotalPaymentInDay", parameters, commandType: CommandType.StoredProcedure);
+
+            return reselt.ToList();
         }
 
         public bool UpdatePayment(Payment payment)
