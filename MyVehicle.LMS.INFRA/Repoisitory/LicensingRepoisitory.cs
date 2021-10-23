@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using MyVehicle.LMS.CORE.Common;
 using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,16 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             
             var result = dBContext.Connection.ExecuteAsync("InsertLicensing", parameters, commandType: CommandType.StoredProcedure);
             return true;
+        }
+
+        public PaymentCost SearchLicensingCost(SearchLicensingCostByEngineCapasty searchLicensingCostByEngineCapasty)
+        {
+            var Parameter = new DynamicParameters();
+            Parameter.Add("@EngineCapasty", searchLicensingCostByEngineCapasty.EngineCapasty, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
+
+           var result = dBContext.Connection.Query<PaymentCost>("SearchLicensingCost", Parameter, commandType: CommandType.StoredProcedure);
+
+            return result.FirstOrDefault();
         }
 
         public bool UpdateLicensing(Licensing licensing)
