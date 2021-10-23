@@ -86,7 +86,7 @@ namespace MyVehicle.LMS.API.Controllers
             return vehicleService.VehicleSystemReport();
         }
         [HttpGet]
-        [Route("SearchByVehicleCategory")]
+        [Route("VehicleSystemReportBetween")]
         [ProducesResponseType(typeof(List<VehiclesUsersLicenseExpiry>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public List<VehicleSystemReport> VehicleSystemReportBetween(VehicleSystemReportBetween vehicleSystemReportBetween)
