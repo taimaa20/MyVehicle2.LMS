@@ -1,4 +1,5 @@
 ﻿using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using MyVehicle.LMS.CORE.Services;
 using System;
@@ -20,6 +21,11 @@ namespace MyVehicle.LMS.INFRA.Services
             return usersRepoisitory.DeleteUsers(users);
         }
 
+        public List<EmployeesSalaries> EmployeesSalaries()
+        {
+            return usersRepoisitory.EmployeesSalaries();
+        }
+
         public List<Users> GetAllUsers()
         {
             return usersRepoisitory.GetAllUsers();
@@ -33,6 +39,21 @@ namespace MyVehicle.LMS.INFRA.Services
         public bool InsertUsers(Users users)
         {
             return usersRepoisitory.InsertUsers(users);
+        }
+
+        public IEnumerable<NumberOfEmployees> NumberOfEmployees()
+        {
+            return usersRepoisitory.NumberOfEmployees();
+        }
+
+        public IEnumerable<NumberOfUsers> NumberOfUsers()
+        {
+            return usersRepoisitory.NumberOfUsers();
+        }
+
+        public List<VehiclesUsers> SearchByUserId(SearchByUserId searchByUserId)
+        {
+            return usersRepoisitory.SearchByUserId(searchByUserId);
         }
 
         public bool UpdateUsers(Users users)

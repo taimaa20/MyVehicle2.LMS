@@ -4,8 +4,8 @@ using System.Text;
 
 namespace MyVehicle.LMS.CORE.DTO
 {
-   public class NumberOfUsers
+    public class TotalMonthSalaries
     {
-        public int Number_Of_Users { get; set; }
+        public double Total_Salaries { get; set; }
     }
 }

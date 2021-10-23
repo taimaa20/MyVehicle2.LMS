@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using MyVehicle.LMS.CORE.Common;
 using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using System;
 using System.Collections.Generic;
@@ -56,6 +57,12 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
 
             var Reselt = dBContext.Connection.ExecuteAsync("InsertSalary", Parameters, commandType: CommandType.StoredProcedure);
             return true;
+        }
+
+        public IEnumerable<TotalMonthSalaries> TotalMonthSalaries(SearchByMonthSalary searchByMonthSalary)
+        {
+            IEnumerable<TotalMonthSalaries> result = dBContext.Connection.Query<TotalMonthSalaries>("TotalMonthSalaries", commandType: CommandType.StoredProcedure);
+            return result;
         }
 
         public bool UpdateSalary(Salary1 salary)

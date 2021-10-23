@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using MyVehicle.LMS.CORE.Common;
 using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using System;
 using System.Collections.Generic;
@@ -87,6 +88,28 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             VehParameter.Add("@VehicleId", VehicleId, dbType: DbType.Int32, direction: ParameterDirection.Input);
             var Result = dBContext.Connection.Query<Vehicles>("GetVehicleById", VehParameter, commandType: CommandType.StoredProcedure);
             return Result.FirstOrDefault();
+        }
+
+        public List<VehiclesUsersLicenseExpiry> SearchingForVehiclesLicenseExpiry(SearchingForVehiclesLicenseExpiry searchingForVehiclesLicenseExpiry)
+        {
+            var VehParameter = new DynamicParameters();
+            VehParameter.Add("@DateFrom", searchingForVehiclesLicenseExpiry.DateFrom, dbType: DbType.DateTime, direction: System.Data.ParameterDirection.Input);
+            VehParameter.Add("@DateTo", searchingForVehiclesLicenseExpiry.DateTo, dbType: DbType.DateTime, direction: System.Data.ParameterDirection.Input);
+
+            IEnumerable<VehiclesUsersLicenseExpiry> result = dBContext.Connection.Query<VehiclesUsersLicenseExpiry>("SearchingForVehiclesLicenseExpiry", VehParameter, commandType: CommandType.StoredProcedure);
+
+            return result.ToList();
+        }
+
+        public List<VehiclesUsers> SearchByVehicleCategory(SearchByVehicleCategory searchByVehicleCategory)
+        {
+            var VehParameter = new DynamicParameters();
+            VehParameter.Add("@VehicleCategory", searchByVehicleCategory.VehicleCategory, dbType: DbType.String, direction: System.Data.ParameterDirection.Input);
+            
+            IEnumerable<VehiclesUsers> result = dBContext.Connection.Query<VehiclesUsers>("SearchByVehicleCategory", VehParameter, commandType: CommandType.StoredProcedure);
+
+            return result.ToList();
+
         }
     }
 }

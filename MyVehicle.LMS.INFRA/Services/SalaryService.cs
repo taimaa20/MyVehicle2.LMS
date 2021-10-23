@@ -1,4 +1,5 @@
 ﻿using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using MyVehicle.LMS.CORE.Services;
 using MyVehicle.LMS.INFRA.Repoisitory;
@@ -34,6 +35,11 @@ namespace MyVehicle.LMS.INFRA.Services
         public bool InsertSalary(Salary1 salary)
         {
             return salaryRepoisitory.InsertSalary(salary);
+        }
+
+        public IEnumerable<TotalMonthSalaries> TotalMonthSalaries(SearchByMonthSalary searchByMonthSalary)
+        {
+            return salaryRepoisitory.TotalMonthSalaries(searchByMonthSalary);
         }
 
         public bool UpdateSalary(Salary1 salary)
