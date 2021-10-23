@@ -52,8 +52,7 @@ namespace MyVehicle.LMS.API
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("[SECRET USED TO SIGN AND VERIFY JWT TOKENS, IT CAN BE ANY STRING]")),
                     ValidateIssuer = false,
-                    ValidateAudience = false
-dd JWT
+                    ValidateAudience = false,
 
 
                 };
