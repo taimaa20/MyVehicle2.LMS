@@ -1,4 +1,5 @@
 ﻿using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,5 +13,11 @@ namespace MyVehicle.LMS.CORE.Repoisitory
         public bool DeleteVehicles(int VehicleId);
         public List<Vehicles> GetAllVehicles();
         public Vehicles GetVehicleById(int VehicleId);
+
+        //Searching For Vehicles LicenseExpiry //Admin
+      public List<VehiclesUsersLicenseExpiry> SearchingForVehiclesLicenseExpiry(SearchingForVehiclesLicenseExpiry searchingForVehiclesLicenseExpiry);
+
+        //Search By Vehicle Category  //Users
+        public List<VehiclesUsers> SearchByVehicleCategory(SearchByVehicleCategory searchByVehicleCategory);
     }
 }

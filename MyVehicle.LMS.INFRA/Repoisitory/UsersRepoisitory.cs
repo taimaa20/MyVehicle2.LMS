@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using MyVehicle.LMS.CORE.Common;
 using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,13 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
            
             var Reselt = dBContext.Connection.ExecuteAsync("UpdateUsers", Parameters, commandType: CommandType.StoredProcedure);
             return true;
+        }
+
+        public List<EmployeesSalaries> EmployeesSalaries()
+        {
+            IEnumerable<EmployeesSalaries> reselt = dBContext.Connection.Query<EmployeesSalaries>("EmployeesSalaries", commandType: CommandType.StoredProcedure);
+
+            return reselt.ToList();
         }
 
         public List<Users> GetAllUsers()
@@ -61,6 +69,28 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             var Reselt = dBContext.Connection.ExecuteAsync("InsertUsers", Parameters, commandType: CommandType.StoredProcedure);
             return true;
 
+        }
+
+        public IEnumerable<NumberOfEmployees> NumberOfEmployees()
+        {
+            IEnumerable<NumberOfEmployees> result = dBContext.Connection.Query<NumberOfEmployees>("NumberOfEmployees", commandType: CommandType.StoredProcedure);
+            return result;
+        }
+
+        public IEnumerable<NumberOfUsers> NumberOfUsers()
+        {
+            IEnumerable<NumberOfUsers> result =dBContext.Connection.Query<NumberOfUsers>("NumberOfUsers", commandType: CommandType.StoredProcedure);
+            return result;
+        }
+
+        public List<VehiclesUsers> SearchByUserId(SearchByUserId searchByUserId)
+        {
+            var Parameter = new DynamicParameters();
+            Parameter.Add("@UserId", searchByUserId.UserId, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
+
+            IEnumerable<VehiclesUsers> result = dBContext.Connection.Query<VehiclesUsers>("SearchByUserId", Parameter, commandType: CommandType.StoredProcedure);
+
+            return result.ToList();
         }
 
         public bool UpdateUsers(Users users)

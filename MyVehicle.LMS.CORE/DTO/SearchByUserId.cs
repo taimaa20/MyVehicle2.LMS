@@ -4,8 +4,8 @@ using System.Text;
 
 namespace MyVehicle.LMS.CORE.DTO
 {
-   public class NumberOfUsers
+   public class SearchByUserId
     {
-        public int Number_Of_Users { get; set; }
+        public int UserId { get; set; }
     }
 }

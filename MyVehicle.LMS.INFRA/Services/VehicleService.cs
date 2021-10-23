@@ -1,4 +1,5 @@
 ﻿using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using MyVehicle.LMS.CORE.Services;
 using System;
@@ -37,6 +38,14 @@ namespace MyVehicle.LMS.INFRA.Services
             return vehicleRepoisitory.GetVehicleById(VehicleId);
         }
 
-       
+        public List<VehiclesUsersLicenseExpiry> SearchingForVehiclesLicenseExpiry(SearchingForVehiclesLicenseExpiry searchingForVehiclesLicenseExpiry)
+        {
+            return vehicleRepoisitory.SearchingForVehiclesLicenseExpiry(searchingForVehiclesLicenseExpiry); 
+        }
+
+        public List<VehiclesUsers> SearchByVehicleCategory(SearchByVehicleCategory searchByVehicleCategory)
+        {
+            return vehicleRepoisitory.SearchByVehicleCategory(searchByVehicleCategory);
+        }
     }
 }
