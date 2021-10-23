@@ -123,11 +123,10 @@ namespace MyVehicle.LMS.API.Controllers
 
         }
 
-        [HttpPost]
-        [Route("customeritembuyer")]
+       
 
         [HttpGet]
-        [Route("CountUserCars/{id}")]
+        [Route("CountUserCars")]
 
         [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
