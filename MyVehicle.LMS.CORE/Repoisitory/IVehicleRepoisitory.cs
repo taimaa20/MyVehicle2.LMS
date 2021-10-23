@@ -24,7 +24,7 @@ namespace MyVehicle.LMS.CORE.Repoisitory
         public List<VehicleSystemReport> VehicleSystemReport();
 
         // VehicleSystemReportBetween
-        public List<VehicleSystemReportBetween> VehicleSystemReportBetween(VehicleSystemReportBetween vehicleSystemReportBetween);
+        public List<VehicleSystemReport> VehicleSystemReportBetween(VehicleSystemReportBetween vehicleSystemReportBetween);
 
     }
 }

@@ -47,6 +47,7 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             var result = dBContext.Connection.ExecuteAsync("NewCarLicensing", p, commandType: CommandType.StoredProcedure);
             return true;
 
+             
         }
     }
 }

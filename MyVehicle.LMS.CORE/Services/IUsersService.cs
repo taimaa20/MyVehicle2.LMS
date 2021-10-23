@@ -32,7 +32,7 @@ namespace MyVehicle.LMS.CORE.Services
         public List<VehiclesUsers> SearchByUserId(SearchByUserId searchByUserId);
 
         //CountUserCars //Users
-        public IEnumerable<CountUserCars> CountUserCars(int id);
+        public IEnumerable<CountUserCars> CountUserCars(SearchByUserId searchByUserId);
 
     }
 }

@@ -19,11 +19,11 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             this.dBContext = dBContext;
         }
 
-        public IEnumerable<CountUserCars> CountUserCars(int id)
+        public IEnumerable<CountUserCars> CountUserCars(SearchByUserId searchByUserId)
         {
                 var par = new DynamicParameters();
-                par.Add("@UserId", id, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
-                IEnumerable<CountUserCars> result = dBContext.Connection.Query<CountUserCars>("CountUserCars", commandType: CommandType.StoredProcedure);
+                par.Add("@UserId",searchByUserId.UserId, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
+                IEnumerable<CountUserCars> result = dBContext.Connection.Query<CountUserCars>("CountUserCars", par, commandType: CommandType.StoredProcedure);
                 return result.ToList();
 
         }

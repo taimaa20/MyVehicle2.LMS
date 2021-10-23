@@ -61,7 +61,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
 
         public IEnumerable<TotalMonthSalaries> TotalMonthSalaries(SearchByMonthSalary searchByMonthSalary)
         {
-            IEnumerable<TotalMonthSalaries> result = dBContext.Connection.Query<TotalMonthSalaries>("TotalMonthSalaries", commandType: CommandType.StoredProcedure);
+            var Parameter = new DynamicParameters();
+            Parameter.Add("@StartDate", searchByMonthSalary.StartDate, dbType: DbType.DateTime, direction: ParameterDirection.Input);
+
+            IEnumerable<TotalMonthSalaries> result = dBContext.Connection.Query<TotalMonthSalaries>("TotalMonthSalaries", Parameter, commandType: CommandType.StoredProcedure);
             return result;
         }
 
