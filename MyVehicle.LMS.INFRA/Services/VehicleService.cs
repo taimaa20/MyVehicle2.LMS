@@ -47,5 +47,15 @@ namespace MyVehicle.LMS.INFRA.Services
         {
             return vehicleRepoisitory.SearchByVehicleCategory(searchByVehicleCategory);
         }
+
+        public List<VehicleSystemReport> VehicleSystemReport()
+        {
+            return vehicleRepoisitory.VehicleSystemReport();
+        }
+
+        public List<VehicleSystemReportBetween> VehicleSystemReportBetween(VehicleSystemReportBetween vehicleSystemReportBetween)
+        {
+            return vehicleRepoisitory.VehicleSystemReportBetween(vehicleSystemReportBetween);
+        }
     }
 }

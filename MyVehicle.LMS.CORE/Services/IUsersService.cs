@@ -31,5 +31,8 @@ namespace MyVehicle.LMS.CORE.Services
         //Search By UserId  //Users
         public List<VehiclesUsers> SearchByUserId(SearchByUserId searchByUserId);
 
+        //CountUserCars //Users
+        public IEnumerable<CountUserCars> CountUserCars(int id);
+
     }
 }

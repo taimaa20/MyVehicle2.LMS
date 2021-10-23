@@ -21,7 +21,12 @@ namespace MyVehicle.LMS.CORE.Services
         //Search By Vehicle Category  //Users
         public List<VehiclesUsers> SearchByVehicleCategory(SearchByVehicleCategory searchByVehicleCategory);
 
+        //VehicleSystem  
+        public List<VehicleSystemReport> VehicleSystemReport();
+        // VehicleSystemReportBetween
+        public List<VehicleSystemReportBetween> VehicleSystemReportBetween(VehicleSystemReportBetween vehicleSystemReportBetween);
 
-        
+
+
     }
 }
