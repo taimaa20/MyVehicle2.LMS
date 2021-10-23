@@ -117,18 +117,23 @@ namespace MyVehicle.LMS.API.Controllers
         [Route("SearchByUserId")]
         [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public List<VehiclesUsers> SearchByUserId(SearchByUserId searchByUserId)
+        public List<VehiclesUsers> SearchByUserId([FromBody]SearchByUserId searchByUserId)
         {
             return usersService.SearchByUserId(searchByUserId);
 
         }
+
+        [HttpPost]
+        [Route("customeritembuyer")]
+
         [HttpGet]
         [Route("CountUserCars/{id}")]
+
         [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IEnumerable<CountUserCars> CountUserCars(int id)
+        public IEnumerable<CountUserCars> CountUserCars([FromBody]SearchByUserId searchByUserId)
         {
-            return usersService.CountUserCars(id);
+            return usersService.CountUserCars(searchByUserId);
 
         }
     }

@@ -53,7 +53,7 @@ namespace MyVehicle.LMS.INFRA.Services
             return vehicleRepoisitory.VehicleSystemReport();
         }
 
-        public List<VehicleSystemReportBetween> VehicleSystemReportBetween(VehicleSystemReportBetween vehicleSystemReportBetween)
+        public List<VehicleSystemReport> VehicleSystemReportBetween(VehicleSystemReportBetween vehicleSystemReportBetween)
         {
             return vehicleRepoisitory.VehicleSystemReportBetween(vehicleSystemReportBetween);
         }
