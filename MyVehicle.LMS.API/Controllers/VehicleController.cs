@@ -93,6 +93,14 @@ namespace MyVehicle.LMS.API.Controllers
         {
             return vehicleService.VehicleSystemReportBetween(vehicleSystemReportBetween);
         }
+        [HttpPost]
+        [Route("TechnecalReport")]
+        [ProducesResponseType(typeof(List<VehiclesUsersLicenseExpiry>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<TechnecalReportJoinDto> TechnecalReport([FromBody]TechnecalReport technecalReport)
+        {
+            return vehicleService.TechnecalReport(technecalReport);
+        }
     }
 
 }

@@ -26,6 +26,11 @@ namespace MyVehicle.LMS.CORE.Services
         // VehicleSystemReportBetween
         public List<VehicleSystemReportBetween> VehicleSystemReportBetween(VehicleSystemReportBetween vehicleSystemReportBetween);
 
+        // TechnecalReport
+
+   
+        public List<TechnecalReportJoinDto> TechnecalReport(TechnecalReport technecalReport);
+
 
 
     }
