@@ -147,5 +147,17 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return Reselt.ToList();
         }
 
+        public List<ListOfEmployees> GetListOfEmployees()
+        {
+            IEnumerable<ListOfEmployees> reselt = dBContext.Connection.Query<ListOfEmployees>("GetListOfEmployees", commandType: CommandType.StoredProcedure);
+
+            return reselt.ToList();
+        }
+
+        public IEnumerable<NumberOfAllUser> GetNumberOfAllUser()
+        {
+            IEnumerable<NumberOfAllUser> result = dBContext.Connection.Query<NumberOfAllUser>("GetNumberOfAllUser", commandType: CommandType.StoredProcedure);
+            return result;
+        }
     }
 }

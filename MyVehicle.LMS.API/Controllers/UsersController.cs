@@ -135,5 +135,23 @@ namespace MyVehicle.LMS.API.Controllers
             return usersService.CountUserCars(searchByUserId);
 
         }
+        [HttpGet]
+        [Route("GetListOfEmployees")]
+
+        [ProducesResponseType(typeof(List<ListOfEmployees>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<ListOfEmployees> GetListOfEmployees()
+        {
+            return usersService.GetListOfEmployees();
+        }
+        [HttpGet]
+        [Route("GetNumberOfAllUser")]
+
+        [ProducesResponseType(typeof(List<NumberOfAllUser>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IEnumerable<NumberOfAllUser> GetNumberOfAllUser()
+        {
+            return usersService.GetNumberOfAllUser();
+        }
     }
 }

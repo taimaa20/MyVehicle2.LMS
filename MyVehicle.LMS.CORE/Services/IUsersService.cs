@@ -33,6 +33,14 @@ namespace MyVehicle.LMS.CORE.Services
 
         //CountUserCars //Users
         public IEnumerable<CountUserCars> CountUserCars(SearchByUserId searchByUserId);
+        //List of Employee  // Admin
+
+        public List<ListOfEmployees> GetListOfEmployees();
+
+        // Retrive Number of AllUsers
+        public IEnumerable<NumberOfAllUser> GetNumberOfAllUser();
+
+
 
     }
 }

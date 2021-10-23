@@ -33,6 +33,12 @@ namespace MyVehicle.LMS.CORE.Repoisitory
         public List<VehiclesUsers> SearchByUserId(SearchByUserId searchByUserId);
         //CountUserCars //Users
         public IEnumerable<CountUserCars> CountUserCars(SearchByUserId searchByUserId);
+        //List of Employee in Admin
+        public List<ListOfEmployees> GetListOfEmployees();
+        // Retrive Number of AllUsers
+        public IEnumerable<NumberOfAllUser> GetNumberOfAllUser();
+       
+
 
 
 

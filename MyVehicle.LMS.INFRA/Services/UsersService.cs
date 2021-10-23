@@ -78,6 +78,14 @@ namespace MyVehicle.LMS.INFRA.Services
             return usersRepoisitory.ViewUserContactInformation(PaymentDate);
         }
 
+        public List<ListOfEmployees> GetListOfEmployees()
+        {
+            return usersRepoisitory.GetListOfEmployees();
+        }
 
+        public IEnumerable<NumberOfAllUser> GetNumberOfAllUser()
+        {
+            return usersRepoisitory.GetNumberOfAllUser();
+        }
     }
 }
