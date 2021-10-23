@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Services;
 using System;
 using System.Collections.Generic;
@@ -55,6 +56,30 @@ namespace MyVehicle.LMS.API.Controllers
         public bool UpdateUsers([FromBody] Users users)
         {
             return usersService.UpdateUsers(users);
+        }
+        [HttpGet]
+        [Route("GetDrivingLicense")]
+        [ProducesResponseType(typeof(List<GetDrivingLicenseDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<GetDrivingLicenseDTO> GetDrivingLicense()
+        {
+            return usersService.GetDrivingLicense();
+        }
+        [HttpGet]
+        [Route("ObtainFinancialReports")]
+        [ProducesResponseType(typeof(List<ObtainFinancialReportsDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<ObtainFinancialReportsDTO> ObtainFinancialReports()
+        {
+            return usersService.ObtainFinancialReports();
+        }
+        [HttpGet]
+        [Route("ViewUserContactInformation/{PaymentDate}")]
+        [ProducesResponseType(typeof(List<ViewUserContactInformationDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<ViewUserContactInformationDTO> ViewUserContactInformation(DateTime PaymentDate)
+        {
+            return usersService.ViewUserContactInformation(PaymentDate);
         }
     }
 }

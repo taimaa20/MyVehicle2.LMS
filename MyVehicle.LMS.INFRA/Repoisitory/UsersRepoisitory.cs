@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using MyVehicle.LMS.CORE.Common;
 using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using System;
 using System.Collections.Generic;
@@ -84,6 +85,28 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return true;
         }
 
-      
+        public List<GetDrivingLicenseDTO> GetDrivingLicense()
+        {
+            IEnumerable<GetDrivingLicenseDTO>
+            Reselt = dBContext.Connection.Query<GetDrivingLicenseDTO>("GetDrivingLicense", commandType: CommandType.StoredProcedure);
+            return Reselt.ToList();
+
+        }
+        public List<ObtainFinancialReportsDTO> ObtainFinancialReports()
+        {
+            IEnumerable<ObtainFinancialReportsDTO>
+            Reselt = dBContext.Connection.Query<ObtainFinancialReportsDTO>("ObtainFinancialReports", commandType: CommandType.StoredProcedure);
+            return Reselt.ToList();
+
+        }
+        public List<ViewUserContactInformationDTO> ViewUserContactInformation(DateTime PaymentDate)
+        {
+            var UParameter = new DynamicParameters();
+            UParameter.Add("@PaymentDate", PaymentDate, dbType: DbType.DateTime, direction: ParameterDirection.Input);
+            var Reselt = dBContext.Connection.Query<ViewUserContactInformationDTO>("ViewUserContactInformation", UParameter, commandType: CommandType.StoredProcedure);
+
+            return Reselt.ToList();
+        }
+
     }
 }

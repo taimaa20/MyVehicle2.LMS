@@ -20,12 +20,16 @@ namespace MyVehicle.LMS.API.Controllers
         }
         [HttpPost]
         [Route("InsertPermissions")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool InsertPermissions(int RoleId)
         {
             return permissionsService.InsertPermissions(RoleId);
         }
         [HttpPut]
         [Route("UpdatePermissions")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool UpdatePermissions(Permissions Per)
         {
             return permissionsService.UpdatePermissions(Per);
@@ -33,6 +37,8 @@ namespace MyVehicle.LMS.API.Controllers
 
         [HttpDelete]
         [Route("DeletePermissions")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool DeletePermissions(int PermissionsId)
         {
             return permissionsService.DeletePermissions(PermissionsId);
@@ -40,6 +46,8 @@ namespace MyVehicle.LMS.API.Controllers
 
         [HttpGet]
         [Route("GetAllPermissions")]
+        [ProducesResponseType(typeof(List<Permissions>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public List<Permissions> GetAllPermissions()
         {
             return permissionsService.GetAllPermissions();

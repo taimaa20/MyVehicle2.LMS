@@ -1,4 +1,5 @@
 ﻿using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using MyVehicle.LMS.CORE.Services;
 using System;
@@ -39,5 +40,19 @@ namespace MyVehicle.LMS.INFRA.Services
         {
             return usersRepoisitory.UpdateUsers(users);
         }
+        public List<GetDrivingLicenseDTO> GetDrivingLicense()
+        {
+            return usersRepoisitory.GetDrivingLicense();
+        }
+        public List<ObtainFinancialReportsDTO> ObtainFinancialReports()
+        {
+            return usersRepoisitory.ObtainFinancialReports();
+        }
+        public List<ViewUserContactInformationDTO> ViewUserContactInformation(DateTime PaymentDate)
+        {
+            return usersRepoisitory.ViewUserContactInformation(PaymentDate);
+        }
+
+
     }
 }

@@ -20,12 +20,16 @@ namespace MyVehicle.LMS.API.Controllers
         }
         [HttpPost]
         [Route("InsertReview")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool InsertReview([FromBody] Review Rev)
         {
             return reviewService.InsertReview(Rev);
         }
         [HttpPut]
         [Route("UpdateReview")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool UpdateReview(Review Rev)
         {
             return reviewService.UpdateReview(Rev);

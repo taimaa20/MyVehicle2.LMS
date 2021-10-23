@@ -16,14 +16,7 @@ namespace MyVehicle.LMS.CORE.Data
         public int Age { get; set; }
         public string Email { get; set; }
         public int PhoneNumber { get; set; }
-
-        
-
-  
-
         public string Address { get; set; }
-   
-        
         public int SettingId { get; set; }
         public int loginId { get; set; }
 
