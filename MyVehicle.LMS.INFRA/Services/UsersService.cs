@@ -73,9 +73,9 @@ namespace MyVehicle.LMS.INFRA.Services
         {
             return usersRepoisitory.ObtainFinancialReports();
         }
-        public List<ViewUserContactInformationDTO> ViewUserContactInformation(DateTime PaymentDate)
+        public List<ViewUserContactInformationDTO> ViewUserContactInformation(ViewUserContactInformationDTO paymentDate)
         {
-            return usersRepoisitory.ViewUserContactInformation(PaymentDate);
+            return usersRepoisitory.ViewUserContactInformation(paymentDate);
         }
 
         public List<ListOfEmployees> GetListOfEmployees()

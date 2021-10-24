@@ -138,10 +138,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return Reselt.ToList();
 
         }
-        public List<ViewUserContactInformationDTO> ViewUserContactInformation(DateTime PaymentDate)
+        public List<ViewUserContactInformationDTO> ViewUserContactInformation(ViewUserContactInformationDTO paymentDate)
         {
             var UParameter = new DynamicParameters();
-            UParameter.Add("@PaymentDate", PaymentDate, dbType: DbType.DateTime, direction: ParameterDirection.Input);
+            UParameter.Add("@PaymentDate", paymentDate.PaymentDate, dbType: DbType.DateTime, direction: ParameterDirection.Input);
             var Reselt = dBContext.Connection.Query<ViewUserContactInformationDTO>("ViewUserContactInformation", UParameter, commandType: CommandType.StoredProcedure);
 
             return Reselt.ToList();
