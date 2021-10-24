@@ -74,13 +74,13 @@ namespace MyVehicle.LMS.API.Controllers
         {
             return usersService.ObtainFinancialReports();
         }
-        [HttpGet]
-        [Route("ViewUserContactInformation/{PaymentDate}")]
+        [HttpPost]
+        [Route("ViewUserContactInformation")]
         [ProducesResponseType(typeof(List<ViewUserContactInformationDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public List<ViewUserContactInformationDTO> ViewUserContactInformation(DateTime PaymentDate)
+        public List<ViewUserContactInformationDTO> ViewUserContactInformation([FromBody] ViewUserContactInformationDTO paymentDate)
         {
-            return usersService.ViewUserContactInformation(PaymentDate);
+            return usersService.ViewUserContactInformation(paymentDate);
         }
 
         [HttpGet]
