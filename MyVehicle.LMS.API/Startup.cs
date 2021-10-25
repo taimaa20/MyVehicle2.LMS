@@ -83,8 +83,8 @@ namespace MyVehicle.LMS.API
 
             services.AddScoped<IPaymentRepoisitory, PaymentRepoisitory>();
             services.AddScoped<ILoginRepoisitory, LoginRepoisitory>();
+            services.AddScoped<INewCarLicensingRepository,NewCarLicensingRepository>();
 
-        
 
             services.AddScoped<ISalaryRepoisitory,SalaryRepoisitory>();
             services.AddScoped<IImagesRepository, ImagesRepository>();
@@ -119,6 +119,7 @@ namespace MyVehicle.LMS.API
             services.AddScoped<IImagesService, ImagesService>();
             services.AddScoped<IJwtService, JwtService>();
 
+            services.AddScoped<INewCarLicensingService,NewCarLicensingService>();
             services.AddScoped<IUserRegistrationService, UserRegistrationService>();
         
 
