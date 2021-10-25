@@ -26,7 +26,7 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             var p = new DynamicParameters();
             p.Add("@VehicleName", newCarLicensing.VehicleName, dbType: DbType.String, direction: ParameterDirection.Input);
 
-            p.Add("@VehicleModel", newCarLicensing.VehicleName, dbType: DbType.String, direction: ParameterDirection.Input);
+            p.Add("@VehicleModel", newCarLicensing.VehicleModel, dbType: DbType.String, direction: ParameterDirection.Input);
             p.Add("@VehicleColor", newCarLicensing.VehicleColor, dbType: DbType.String, direction: ParameterDirection.Input);
             p.Add("@VehicleCategory", newCarLicensing.VehicleCategory, dbType: DbType.String, direction: ParameterDirection.Input);
             p.Add("@UseType", newCarLicensing.UseType, dbType: DbType.String, direction: ParameterDirection.Input);

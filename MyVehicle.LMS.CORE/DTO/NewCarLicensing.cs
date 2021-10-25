@@ -7,11 +7,6 @@ namespace MyVehicle.LMS.CORE.DTO
    public class NewCarLicensing
     {
 
- 
-
-
-
-
         public string VehicleName { get; set; }
         public string VehicleModel { get; set; }
         public string VehicleColor { get; set; }

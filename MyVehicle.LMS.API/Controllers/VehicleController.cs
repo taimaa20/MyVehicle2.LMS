@@ -85,11 +85,11 @@ namespace MyVehicle.LMS.API.Controllers
         {
             return vehicleService.VehicleSystemReport();
         }
-        [HttpGet]
+        [HttpPost]
         [Route("VehicleSystemReportBetween")]
-        [ProducesResponseType(typeof(List<VehiclesUsersLicenseExpiry>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<VehicleSystemReport>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public List<VehicleSystemReport> VehicleSystemReportBetween(VehicleSystemReportBetween vehicleSystemReportBetween)
+        public List<VehicleSystemReport> VehicleSystemReportBetween([FromBody] VehicleSystemReportBetween vehicleSystemReportBetween)
         {
             return vehicleService.VehicleSystemReportBetween(vehicleSystemReportBetween);
         }
