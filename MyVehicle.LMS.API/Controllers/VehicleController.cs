@@ -52,7 +52,7 @@ namespace MyVehicle.LMS.API.Controllers
             return vehicleService.GetAllVehicles();
         }
         [HttpGet]
-        [Route("GetVehicleById/{VehicleId}")]
+        [Route("GetVehicleById")]
         [ProducesResponseType(typeof(Vehicles), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public Vehicles GetVehicleById(int VehicleId)
