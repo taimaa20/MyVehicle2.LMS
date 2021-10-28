@@ -44,6 +44,20 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return true;
         }
 
+        public GetCost SearchInfo(EngineCapacityAndType capacityAndType)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@EngineCapacity", capacityAndType.EngineCapacity, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
+
+
+            parameters.Add("@EngineType", capacityAndType.EngineType, dbType: System.Data.DbType.String, direction: System.Data.ParameterDirection.Input);
+
+
+            var result = dBContext.Connection.Query<GetCost>("SearchInfo", parameters, commandType: CommandType.StoredProcedure);
+
+            return result.FirstOrDefault();
+        }
+
         public PaymentCost SearchLicensingCost(SearchLicensingCostByEngineCapasty searchLicensingCostByEngineCapasty)
         {
             var Parameter = new DynamicParameters();

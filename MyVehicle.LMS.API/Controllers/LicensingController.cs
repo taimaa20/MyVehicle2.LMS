@@ -55,5 +55,15 @@ namespace MyVehicle.LMS.API.Controllers
             return licensingService.SearchLicensingCost(searchLicensingCostByEngineCapasty);
         }
 
+        [HttpPost]
+        [Route("SearchInfo")]
+
+        [ProducesResponseType(typeof(List<GetCost>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public GetCost SearchInfo([FromBody]EngineCapacityAndType capacityAndType)
+        {
+            return licensingService.SearchInfo(capacityAndType);
+        }
+
     }
 }
