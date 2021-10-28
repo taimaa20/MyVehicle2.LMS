@@ -26,6 +26,11 @@ namespace MyVehicle.LMS.INFRA.Services
             return licensingRepoisitory.InsertLicensing(licensing);
         }
 
+        public GetCost SearchInfo(EngineCapacityAndType capacityAndType)
+        {
+            return licensingRepoisitory.SearchInfo(capacityAndType);
+        }
+
         public PaymentCost SearchLicensingCost(SearchLicensingCostByEngineCapasty searchLicensingCostByEngineCapasty)
         {
             return licensingRepoisitory.SearchLicensingCost(searchLicensingCostByEngineCapasty);

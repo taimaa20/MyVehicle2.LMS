@@ -16,5 +16,7 @@ namespace MyVehicle.LMS.CORE.Repoisitory
 
         public PaymentCost SearchLicensingCost(SearchLicensingCostByEngineCapasty searchLicensingCostByEngineCapasty);
 
+        public GetCost SearchInfo(EngineCapacityAndType capacityAndType);
+
     }
 }
