@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using MyVehicle.LMS.CORE.Common;
+using MyVehicle.LMS.CORE.Data;
 using MyVehicle.LMS.CORE.Repoisitory;
 using MyVehicle.LMS.CORE.Services;
 
@@ -121,7 +122,9 @@ namespace MyVehicle.LMS.API
 
             services.AddScoped<INewCarLicensingService,NewCarLicensingService>();
             services.AddScoped<IUserRegistrationService, UserRegistrationService>();
-        
+
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            services.AddTransient<IMailService, MailService>();
 
         }
 
