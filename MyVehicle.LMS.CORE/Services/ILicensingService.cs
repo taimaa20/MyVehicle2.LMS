@@ -14,5 +14,7 @@ namespace MyVehicle.LMS.CORE.Services
         public bool UpdateLicensing(Licensing licensing);
         public PaymentCost SearchLicensingCost(SearchLicensingCostByEngineCapasty searchLicensingCostByEngineCapasty);
 
+
+
     }
 }
