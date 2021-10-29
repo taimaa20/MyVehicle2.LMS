@@ -16,5 +16,9 @@ namespace MyVehicle.LMS.CORE.Services
 
 
 
+
+        public GetCost SearchInfo(EngineCapacityAndType capacityAndType);
+
+
     }
 }
