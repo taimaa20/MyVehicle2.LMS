@@ -1,4 +1,5 @@
 ﻿using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using MyVehicle.LMS.CORE.Services;
 using MyVehicle.LMS.INFRA.Repoisitory;
@@ -14,6 +15,11 @@ namespace MyVehicle.LMS.INFRA.Services
         public LicensingAndInsuranceService(ILicensingAndInsuranceRepository licensingAndInsuranceRepository)
         {
             this.licensingAndInsuranceRepository = licensingAndInsuranceRepository;
+        }
+
+        public bool CreateLicensingAndInsurance(LicensingInsurance licensingInsurance)
+        {
+            return licensingAndInsuranceRepository.CreateLicensingAndInsurance(licensingInsurance);
         }
 
         public List<LicensingAndInsurance> GetAllLicensingAndInsurance()

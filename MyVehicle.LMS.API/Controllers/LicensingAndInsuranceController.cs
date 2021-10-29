@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Services;
 using MyVehicle.LMS.INFRA.Services;
 using System;
@@ -45,6 +46,15 @@ namespace MyVehicle.LMS.API.Controllers
         public bool UpdateLicensingAndInsurance(LicensingAndInsurance licensingAndInsurance)
         {
             return licensingAndInsuranceService.UpdateLicensingAndInsurance(licensingAndInsurance);
+        }
+
+        [HttpPost]
+        [Route("CreateLicensingAndInsurance")]
+        [ProducesResponseType(typeof(List<LicensingAndInsurance>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public bool CreateLicensingAndInsurance([FromBody]LicensingInsurance licensingInsurance)
+        {
+            return licensingAndInsuranceService.CreateLicensingAndInsurance(licensingInsurance);
         }
     }
 }
