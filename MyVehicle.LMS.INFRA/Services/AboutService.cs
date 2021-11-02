@@ -17,7 +17,7 @@ namespace MyVehicle.LMS.INFRA.Services
         }
         public bool DeleteAbout(int id)
         {
-            return aboutRepository.DeleteAbout(about);
+            return aboutRepository.DeleteAbout(id);
         }
 
         public List<About> GetAllAbout()
