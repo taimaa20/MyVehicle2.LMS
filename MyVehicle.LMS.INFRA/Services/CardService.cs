@@ -14,9 +14,9 @@ namespace MyVehicle.LMS.INFRA.Services
         {
             this.cardsRepoisitory = cardsRepoisitory;
         }
-        public bool DeleteCards(Cards cards)
+        public bool DeleteCards(int id)
         {
-            return cardsRepoisitory.DeleteCards(cards);
+            return cardsRepoisitory.DeleteCards(id);
         }
 
         public List<Cards> GetAllCards()

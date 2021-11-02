@@ -10,7 +10,7 @@ namespace MyVehicle.LMS.CORE.Repoisitory
          
         public bool InsertAttendance(Attendance attendance);
         public bool UpdateAttendance(Attendance attendance);
-        public bool DeleteAttendance(Attendance attendance);
+        public bool DeleteAttendance(int id);
         public List<Attendance> GetAllAttendance();
     }
 }

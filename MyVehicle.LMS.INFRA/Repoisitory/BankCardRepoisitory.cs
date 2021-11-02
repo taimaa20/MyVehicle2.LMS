@@ -23,10 +23,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
 
 
         }
-        public bool DeleteBankCard(BankCard bankCard)
+        public bool DeleteBankCard(int id)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@BankCardId", bankCard.BankCardId, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
+            parameter.Add("@BankCardId",id, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
             var result = dBContext.Connection.ExecuteAsync("DeleteBankCard", parameter, commandType: CommandType.StoredProcedure);
             return true;
         }

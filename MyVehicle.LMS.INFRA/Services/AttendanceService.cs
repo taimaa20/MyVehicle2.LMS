@@ -16,9 +16,9 @@ namespace MyVehicle.LMS.INFRA.Services
             this.attendanceRepository = attendanceRepository;
         }
 
-        public bool DeleteAttendance(Attendance attendance)
+        public bool DeleteAttendance(int id)
         {
-            return attendanceRepository.DeleteAttendance(attendance);
+            return attendanceRepository.DeleteAttendance(id);
         }
 
         public List<Attendance> GetAllAttendance()

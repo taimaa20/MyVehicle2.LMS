@@ -17,10 +17,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
         {
             this.dBContext = dBContext;
         }
-        public bool DeleteCards(Cards cards)
+        public bool DeleteCards(int id)
         {
             var Parameters = new DynamicParameters();
-            Parameters.Add("@CardId", cards.CardId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameters.Add("@CardId",id, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
             var Reselt = dBContext.Connection.ExecuteAsync("DeleteCards", Parameters, commandType: CommandType.StoredProcedure);
             return true;

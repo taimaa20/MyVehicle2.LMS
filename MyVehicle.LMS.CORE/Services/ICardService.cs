@@ -9,7 +9,7 @@ namespace MyVehicle.LMS.CORE.Services
     {
         public bool InsertCards(Cards cards);
         public bool UpdateCards(Cards cards);
-        public bool DeleteCards(Cards cards);
+        public bool DeleteCards(int id);
         public List<Cards> GetAllCards();
         public Cards GetCardById(Cards cards);
     }
