@@ -18,12 +18,12 @@ namespace MyVehicle.LMS.API.Controllers
         {
             this.cardService = cardService;
         }
-        [HttpDelete("delete")]
+        [HttpDelete("delete/{id}")]
         [ProducesResponseType(typeof(List<Cards>),StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public bool DeleteCards([FromBody] Cards cards)
+        public bool DeleteCards(int id)
         {
-            return cardService.DeleteCards(cards);
+            return cardService.DeleteCards(id);
         }
         [HttpGet]
         [Route("GetAllCards")]

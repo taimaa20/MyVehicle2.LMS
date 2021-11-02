@@ -11,7 +11,7 @@ namespace MyVehicle.LMS.CORE.Repoisitory
 
         public bool InsertBankCard(BankCard bankCard);
         public bool UpdateBankCard(BankCard bankCard);
-        public bool DeleteBankCard(BankCard bankCard);
+        public bool DeleteBankCard(int id);
         public BankCard GetBankCardById(BankCard bankCard);
     }
 }

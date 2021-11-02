@@ -19,12 +19,12 @@ namespace MyVehicle.LMS.API.Controllers
         {
             this.aboutService = aboutService;
         }
-        [HttpDelete("delete")]
+        [HttpDelete("delete/{id}")]
         [ProducesResponseType(typeof(List<About>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public bool DeleteAbout(About about)
+        public bool DeleteAbout(int id)
         {
-            return aboutService.DeleteAbout(about);
+            return aboutService.DeleteAbout(id);
         }
 
         [HttpGet]

@@ -9,7 +9,7 @@ namespace MyVehicle.LMS.CORE.Repoisitory
     {
         public bool InsertContact(Contact contact);
         public bool UpdateContact(Contact contact);
-        public bool DeleteContact(Contact contact);
+        public bool DeleteContact(int id);
         public List<Contact> GetAllContact();
     }
 }

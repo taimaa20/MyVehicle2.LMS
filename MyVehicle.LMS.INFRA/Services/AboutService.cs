@@ -15,7 +15,7 @@ namespace MyVehicle.LMS.INFRA.Services
         {
             this.aboutRepository = aboutRepository;
         }
-        public bool DeleteAbout(About about)
+        public bool DeleteAbout(int id)
         {
             return aboutRepository.DeleteAbout(about);
         }

@@ -17,10 +17,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
         {
             this.dBContext = dBContext;
         }
-        public bool DeleteAbout(About about)
+        public bool DeleteAbout(int id)
         {
             var Parameters = new DynamicParameters();
-            Parameters.Add("@AboutId", about.AboutId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameters.Add("@AboutId", id, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
             var Reselt = dBContext.Connection.ExecuteAsync("DeleteAbout", Parameters, commandType: CommandType.StoredProcedure);
             return true;

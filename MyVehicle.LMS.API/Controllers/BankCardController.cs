@@ -19,12 +19,12 @@ namespace MyVehicle.LMS.API.Controllers
             this.bankCardService = bankCardService;
         }
 
-        [HttpDelete("delete")]
+        [HttpDelete("delete/{id}")]
         [ProducesResponseType(typeof(List<BankCard>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public bool DeleteBankCard(BankCard bankCard)
+        public bool DeleteBankCard(int id)
         {
-            return bankCardService.DeleteBankCard(bankCard);
+            return bankCardService.DeleteBankCard(id);
         }
 
         [HttpGet]

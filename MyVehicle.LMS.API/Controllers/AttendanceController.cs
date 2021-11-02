@@ -18,12 +18,12 @@ namespace MyVehicle.LMS.API.Controllers
         {
             this.attendanceService = attendanceService;
         }
-        [HttpDelete("delete")]
+        [HttpDelete("delete/{id}")]
         [ProducesResponseType(typeof(List<Attendance>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public bool DeleteAttendance(Attendance attendance)
+        public bool DeleteAttendance(int id)
         {
-            return attendanceService.DeleteAttendance(attendance);
+            return attendanceService.DeleteAttendance(id);
         }
 
         [HttpGet]

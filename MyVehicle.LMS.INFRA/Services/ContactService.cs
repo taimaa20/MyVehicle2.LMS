@@ -14,9 +14,9 @@ namespace MyVehicle.LMS.INFRA.Services
         {
             this.contactRepoisitory = contactRepoisitory;
         }
-        public bool DeleteContact(Contact contact)
+        public bool DeleteContact(int id)
         {
-            return contactRepoisitory.DeleteContact(contact);
+            return contactRepoisitory.DeleteContact(id);
         }
 
         public List<Contact> GetAllContact()

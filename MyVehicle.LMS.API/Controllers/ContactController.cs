@@ -18,12 +18,12 @@ namespace MyVehicle.LMS.API.Controllers
         {
             this.contactService = contactService;
         }
-        [HttpDelete("delete")]
+        [HttpDelete("delete/{id}")]
         [ProducesResponseType(typeof(List<Contact>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public bool DeleteContact([FromBody] Contact contact)
+        public bool DeleteContact(int id)
         {
-            return contactService.DeleteContact(contact);
+            return contactService.DeleteContact(id);
         }
         [HttpGet]
         [Route("GetAllContact")]
