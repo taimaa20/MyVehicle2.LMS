@@ -20,10 +20,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
 
   
 
-        public bool DeleteNotification(Notification notification)
+        public bool DeleteNotification(int NotificationId)
         {
             var Parameters = new DynamicParameters();
-            Parameters.Add("@NotificationId", notification.NotificationId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameters.Add("@NotificationId",NotificationId, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
             var Reselt = dBContext.Connection.ExecuteAsync("DeleteNotification", Parameters, commandType: CommandType.StoredProcedure);
             return true;

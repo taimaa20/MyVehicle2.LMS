@@ -18,12 +18,12 @@ namespace MyVehicle.LMS.API.Controllers
         {
             this.testimonialService = testimonialService;
         }
-        [HttpDelete("delete")]
+        [HttpDelete("DeleteTestimonial/{TestimonialId}")]
         [ProducesResponseType(typeof(List<Testimonial>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public bool DeleteTestimonial(Testimonial testimonial)
+        public bool DeleteTestimonial(int TestimonialId)
         {
-            return testimonialService.DeleteTestimonial(testimonial);
+            return testimonialService.DeleteTestimonial(TestimonialId);
         }
 
         [HttpGet]

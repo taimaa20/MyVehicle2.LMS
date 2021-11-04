@@ -18,12 +18,12 @@ namespace MyVehicle.LMS.API.Controllers
         {
             this.notificationService = notificationService;
         }
-        [HttpDelete("delete")]
+        [HttpDelete("DeleteNotification/{NotificationId}")]
         [ProducesResponseType(typeof(List<Notification>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public bool DeleteNotification(Notification notification)
+        public bool DeleteNotification(int NotificationId)
         {
-            return notificationService.DeleteNotification(notification);
+            return notificationService.DeleteNotification(NotificationId);
         }
 
         [HttpGet]

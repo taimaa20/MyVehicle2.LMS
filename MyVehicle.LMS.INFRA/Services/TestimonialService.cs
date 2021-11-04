@@ -16,9 +16,9 @@ namespace MyVehicle.LMS.INFRA.Services
             this.testimonialRepository = testimonialRepository;
         }
 
-        public bool DeleteTestimonial(Testimonial testimonial)
+        public bool DeleteTestimonial(int TestimonialId)
         {
-            return testimonialRepository.DeleteTestimonial(testimonial);
+            return testimonialRepository.DeleteTestimonial(TestimonialId);
         }
 
         public List<Testimonial> GetAllTestimonial()

@@ -16,9 +16,9 @@ namespace MyVehicle.LMS.INFRA.Services
             this.notificationRepository = notificationRepository;
         }
 
-        public bool DeleteNotification(Notification notification)
+        public bool DeleteNotification(int NotificationId)
         {
-            return notificationRepository.DeleteNotification(notification);
+            return notificationRepository.DeleteNotification(NotificationId);
         }
 
         public List<Notification> GetAllNotification()
