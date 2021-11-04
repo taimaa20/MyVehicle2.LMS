@@ -7,7 +7,7 @@ namespace MyVehicle.LMS.CORE.Services
 {
   public  interface ITestimonialService
     {
-        public bool DeleteTestimonial(Testimonial testimonial);
+        public bool DeleteTestimonial(int TestimonialId);
         public List<Testimonial> GetAllTestimonial();
         public bool InsertTestimonial(Testimonial testimonial);
         public bool UpdateTestimonial(Testimonial testimonial);
