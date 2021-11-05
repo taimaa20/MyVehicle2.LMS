@@ -23,10 +23,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
 
         }
 
-        public bool DeleteWebsiteSetting(WebsiteSetting websiteSetting)
+        public bool DeleteWebsiteSetting(int id)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@SettingId", websiteSetting.SettingId, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
+            parameter.Add("@SettingId", id, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
             var result = dBContext.Connection.ExecuteAsync("DeleteWebsiteSetting", parameter, commandType: CommandType.StoredProcedure);
             return true;
         }

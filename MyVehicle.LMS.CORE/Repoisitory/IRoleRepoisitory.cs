@@ -9,8 +9,8 @@ namespace MyVehicle.LMS.CORE.Repoisitory
     {
         public bool InsertRole(Role role);
         public bool UpdateRole(Role role);
-        public bool DeleteRole(Role role);
+        public bool DeleteRole(int id);
         public List<Role> GetAllRole();
-        public Role GetRoleById(Role role);
+        public Role GetRoleById(int id);
     }
 }

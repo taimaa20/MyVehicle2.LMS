@@ -15,9 +15,9 @@ namespace MyVehicle.LMS.INFRA.Services
             this.roleRepoisitory = roleRepoisitory;
         }
 
-        public bool DeleteRole(Role role)
+        public bool DeleteRole(int id)
         {
-            return roleRepoisitory.DeleteRole(role);
+            return roleRepoisitory.DeleteRole(id);
         }
 
         public List<Role> GetAllRole()
@@ -25,9 +25,9 @@ namespace MyVehicle.LMS.INFRA.Services
             return roleRepoisitory.GetAllRole();
         }
 
-        public Role GetRoleById(Role role)
+        public Role GetRoleById(int id)
         {
-            return roleRepoisitory.GetRoleById(role);
+            return roleRepoisitory.GetRoleById(id);
         }
 
         public bool InsertRole(Role role)
