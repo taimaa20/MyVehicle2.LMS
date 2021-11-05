@@ -19,12 +19,12 @@ namespace MyVehicle.LMS.API.Controllers
             this.websiteSettingService = websiteSettingService;
         }
 
-        [HttpDelete("delete")]
+        [HttpDelete("delete/{id}")]
         [ProducesResponseType(typeof(List<WebsiteSetting>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public bool DeleteWebsiteSetting(WebsiteSetting websiteSetting)
+        public bool DeleteWebsiteSetting(int id)
         {
-            return websiteSettingService.DeleteWebsiteSetting(websiteSetting);
+            return websiteSettingService.DeleteWebsiteSetting(id);
         }
 
         [HttpGet]

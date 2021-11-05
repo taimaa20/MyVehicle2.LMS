@@ -17,10 +17,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
         {
             this.dBContext = dBContext;
         }
-        public bool DeleteRole(Role role)
+        public bool DeleteRole(int id)
         {
             var Parameters = new DynamicParameters();
-            Parameters.Add("@RoleId", role.RoleId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameters.Add("@RoleId", id, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
             var Reselt = dBContext.Connection.ExecuteAsync("UpdateRole", Parameters, commandType: CommandType.StoredProcedure);
             return true;
@@ -33,10 +33,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
 
         }
 
-        public Role GetRoleById(Role role)
+        public Role GetRoleById(int id)
         {
             var Parameters = new DynamicParameters();
-            Parameters.Add("@RoleId", role.RoleId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameters.Add("@RoleId", id, dbType: DbType.Int32, direction: ParameterDirection.Input);
             var result = dBContext.Connection.Query<Role>("GetRoleById", Parameters,commandType:CommandType.StoredProcedure);
             return result.FirstOrDefault();
         }

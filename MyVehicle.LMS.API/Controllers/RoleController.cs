@@ -18,12 +18,12 @@ namespace MyVehicle.LMS.API.Controllers
         {
             this.roleService = roleService;
         }
-        [HttpDelete ("delete")]
+        [HttpDelete ("delete/{id}")]
         [ProducesResponseType(typeof(List<Role>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public bool DeleteRole([FromBody] Role role)
+        public bool DeleteRole(int id)
         {
-            return roleService.DeleteRole(role);
+            return roleService.DeleteRole(id);
         }
         [HttpGet]
         [Route("GetAllRole")]
@@ -34,12 +34,12 @@ namespace MyVehicle.LMS.API.Controllers
             return roleService.GetAllRole();
         }
         [HttpGet]
-        [Route("GetRoleById")]
+        [Route("GetRoleById/{id}")]
         [ProducesResponseType(typeof(List<Role>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Role GetRoleById(Role role)
+        public Role GetRoleById(int id)
         {
-            return roleService.GetRoleById(role);
+            return roleService.GetRoleById(id);
         }
         [HttpPost]
         [ProducesResponseType(typeof(List<Role>), StatusCodes.Status200OK)]

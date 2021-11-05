@@ -15,9 +15,9 @@ namespace MyVehicle.LMS.INFRA.Services
             this.websiteSettingRepoisitory = websiteSettingRepoisitory;
         }
 
-        public bool DeleteWebsiteSetting(WebsiteSetting websiteSetting)
+        public bool DeleteWebsiteSetting(int id)
         {
-            return websiteSettingRepoisitory.DeleteWebsiteSetting(websiteSetting);
+            return websiteSettingRepoisitory.DeleteWebsiteSetting(id);
         }
 
         public List<WebsiteSetting> GetAllWebsiteSetting()
