@@ -21,9 +21,9 @@ namespace MyVehicle.LMS.INFRA.Services
             return usersRepoisitory.CountUserCars(searchByUserId);
         }
 
-        public bool DeleteUsers(Users users)
+        public bool DeleteUsers(int id)
         {
-            return usersRepoisitory.DeleteUsers(users);
+            return usersRepoisitory.DeleteUsers(id);
         }
 
         public List<EmployeesSalaries> EmployeesSalaries()
@@ -36,9 +36,9 @@ namespace MyVehicle.LMS.INFRA.Services
             return usersRepoisitory.GetAllUsers();
         }
 
-        public Users GetAllUsersById(Users users)
+        public Users GetAllUsersById(int id)
         {
-            return usersRepoisitory.GetAllUsersById(users);
+            return usersRepoisitory.GetAllUsersById(id);
         }
 
         public bool InsertUsers(Users users)

@@ -17,10 +17,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             this.dBContext = dBContext;
         }
 
-        public bool DeleteReportType(ReportType reportType)
+        public bool DeleteReportType(int id)
         {
             var Parameters = new DynamicParameters();
-            Parameters.Add("@ReportTypeId", reportType.ReportTypeId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameters.Add("@ReportTypeId", id, dbType: DbType.Int32, direction: ParameterDirection.Input);
             var Reselt = dBContext.Connection.ExecuteAsync("DeleteReportType", Parameters, commandType: CommandType.StoredProcedure);
             return true;
         }

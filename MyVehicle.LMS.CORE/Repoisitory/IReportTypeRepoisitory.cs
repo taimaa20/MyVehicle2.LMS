@@ -8,7 +8,7 @@ namespace MyVehicle.LMS.CORE.Repoisitory
   public  interface IReportTypeRepoisitory
     {
         public bool InsertReportType(ReportType reportType);
-        public bool DeleteReportType(ReportType reportType);
+        public bool DeleteReportType(int id);
 
     }
 }
