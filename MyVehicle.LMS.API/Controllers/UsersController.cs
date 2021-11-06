@@ -23,7 +23,7 @@ namespace MyVehicle.LMS.API.Controllers
         [HttpDelete ("delete")]
         [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public bool DeleteUsers([FromBody] Users users)
+        public bool DeleteUsers( Users users)
         {
             return usersService.DeleteUsers(users);
         }
