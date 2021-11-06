@@ -15,9 +15,9 @@ namespace MyVehicle.LMS.INFRA.Services
             this.reportTypeRepoisitory = reportTypeRepoisitory;
         }
 
-        public bool DeleteReportType(ReportType reportType)
+        public bool DeleteReportType(int id)
         {
-            return reportTypeRepoisitory.DeleteReportType(reportType);
+            return reportTypeRepoisitory.DeleteReportType(id);
         }
 
         public bool InsertReportType(ReportType reportType)

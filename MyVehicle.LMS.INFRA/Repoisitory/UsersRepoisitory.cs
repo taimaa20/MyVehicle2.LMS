@@ -28,11 +28,11 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
 
         }
 
-        public bool DeleteUsers(Users users)
+        public bool DeleteUsers(int id)
         {
             var Parameters = new DynamicParameters();
 
-            Parameters.Add("@UserId", users.UserId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameters.Add("@UserId", id, dbType: DbType.Int32, direction: ParameterDirection.Input);
            
             var Reselt = dBContext.Connection.ExecuteAsync("UpdateUsers", Parameters, commandType: CommandType.StoredProcedure);
             return true;
@@ -52,10 +52,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return reselt.ToList();
         }
 
-        public Users GetAllUsersById(Users users)
+        public Users GetAllUsersById(int id)
         {
             var Parameter = new DynamicParameters();
-            Parameter.Add("@UserId", users.UserId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameter.Add("@UserId", id, dbType: DbType.Int32, direction: ParameterDirection.Input);
             var reselt = dBContext.Connection.Query<Users>("GetAllUsersById", Parameter, commandType: CommandType.StoredProcedure);
 
             return reselt.FirstOrDefault();

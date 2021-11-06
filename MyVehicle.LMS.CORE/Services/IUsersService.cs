@@ -10,9 +10,9 @@ namespace MyVehicle.LMS.CORE.Services
     {
         public bool InsertUsers(Users users);
         public bool UpdateUsers(Users users);
-        public bool DeleteUsers(Users users);
+        public bool DeleteUsers(int id);
         public List<Users> GetAllUsers();
-        public Users GetAllUsersById(Users users);
+        public Users GetAllUsersById(int id);
 
         public List<GetDrivingLicenseDTO> GetDrivingLicense();
         public List<ObtainFinancialReportsDTO> ObtainFinancialReports();
