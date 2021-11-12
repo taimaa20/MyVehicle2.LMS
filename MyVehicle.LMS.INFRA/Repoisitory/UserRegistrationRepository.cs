@@ -33,7 +33,7 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
 
 
             parameters.Add("@SettingId", newUser.SettingId, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            parameters.Add("@loginId", newUser.loginId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            
             var result = dBContext.Connection.ExecuteAsync("UserRegistration", parameters, commandType: CommandType.StoredProcedure);
             return true;
         }

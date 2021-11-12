@@ -17,6 +17,6 @@ namespace MyVehicle.LMS.CORE.DTO
         public int PhoneNumber { get; set; }
         public string Address { get; set; }
         public int SettingId { get; set; }
-        public int loginId { get; set; }
+        
     }
 }
