@@ -22,7 +22,7 @@ namespace MyVehicle.LMS.API.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(List<NewUser>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public bool UserRegistration(NewUser newUser)
+        public bool UserRegistration([FromBody] NewUser newUser)
         {
             return userRegistrationService.UserRegistration(newUser);
         }
