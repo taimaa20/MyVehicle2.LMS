@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using MyVehicle.LMS.CORE.Common;
 using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using System;
 using System.Collections.Generic;
@@ -53,7 +54,17 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
            Result = dBContext.Connection.Query<TaskJob>("GetAllTaskJob", commandType: CommandType.StoredProcedure);
             return Result.ToList();
         }
+        public List<TaskJob> TaskJobById(int UserId)
 
-        
+        {
+            var VehParameter = new DynamicParameters();
+            VehParameter.Add("@Userid", UserId, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
+
+            IEnumerable<TaskJob> result = dBContext.Connection.Query<TaskJob>("GetTaskJobById", VehParameter, commandType: CommandType.StoredProcedure);
+
+            return result.ToList();
+
+        }
+
     }
 }

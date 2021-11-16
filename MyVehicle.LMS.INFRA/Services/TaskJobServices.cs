@@ -1,4 +1,5 @@
 ﻿using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Repoisitory;
 using MyVehicle.LMS.CORE.Services;
 using System;
@@ -33,5 +34,10 @@ namespace MyVehicle.LMS.INFRA.Services
             return taskJobRepoisitory.GetAllTaskJob();
 
         }
-   }
+        public List<TaskJob> TaskJobById(int UserId)
+        {
+            return taskJobRepoisitory.TaskJobById(UserId);
+        }
+
+    }
 }

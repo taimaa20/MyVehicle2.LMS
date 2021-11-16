@@ -37,7 +37,9 @@ namespace MyVehicle.LMS.CORE.Repoisitory
         public List<ListOfEmployees> GetListOfEmployees();
         // Retrive Number of AllUsers
         public IEnumerable<NumberOfAllUser> GetNumberOfAllUser();
-       
+
+     
+
 
 
 
