@@ -6,6 +6,7 @@ namespace MyVehicle.LMS.CORE.DTO
 {
   public  class UsernameRolename
     {
+        public int UserId { get; set; }
         public string Username { get; set; }
         public string RoleName { get; set; }
     }
