@@ -34,13 +34,13 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
         }
 
         public bool InsertTestimonial(Testimonial testimonial)
-        {
+        { 
    
             var Parameters = new DynamicParameters();
             Parameters.Add("@TestimonialName", testimonial.TestimonialName, dbType: DbType.String, direction: ParameterDirection.Input);
             Parameters.Add("@TestimonialEmail", testimonial.TestimonialEmail, dbType: DbType.String, direction: ParameterDirection.Input);
-            Parameters.Add("@TestimonialTel", testimonial.Comment, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            Parameters.Add("@Comment", testimonial.Comment, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameters.Add("@TestimonialTel", testimonial.TestimonialTel, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameters.Add("@Comment", testimonial.Comment, dbType: DbType.String, direction: ParameterDirection.Input);
             Parameters.Add("@ProblemImage", testimonial.ProblemImage, dbType: DbType.String, direction: ParameterDirection.Input);
             Parameters.Add("@SettingId", testimonial.SettingId, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
@@ -55,8 +55,8 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             Parameters.Add("@TestimonialId", testimonial.TestimonialId, dbType: DbType.Int32, direction: ParameterDirection.Input);
             Parameters.Add("@TestimonialName", testimonial.TestimonialName, dbType: DbType.String, direction: ParameterDirection.Input);
             Parameters.Add("@TestimonialEmail", testimonial.TestimonialEmail, dbType: DbType.String, direction: ParameterDirection.Input);
-            Parameters.Add("@TestimonialTel", testimonial.Comment, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            Parameters.Add("@Comment", testimonial.Comment, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameters.Add("@TestimonialTel", testimonial.TestimonialTel, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameters.Add("@Comment", testimonial.Comment, dbType: DbType.String, direction: ParameterDirection.Input);
             Parameters.Add("@ProblemImage", testimonial.ProblemImage, dbType: DbType.String, direction: ParameterDirection.Input);
             Parameters.Add("@SettingId", testimonial.SettingId, dbType: DbType.Int32, direction: ParameterDirection.Input);
             var Reselt = dBContext.Connection.ExecuteAsync("UpdateTestimonial", Parameters, commandType: CommandType.StoredProcedure);
