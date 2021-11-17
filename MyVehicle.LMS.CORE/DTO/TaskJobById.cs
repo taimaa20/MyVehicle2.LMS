@@ -4,10 +4,8 @@ using System.Text;
 
 namespace MyVehicle.LMS.CORE.DTO
 {
-  public  class UsernameRolename
+   public class TaskJobById
     {
         public int UserId { get; set; }
-        public string Username { get; set; }
-        public string RoleName { get; set; }
     }
 }

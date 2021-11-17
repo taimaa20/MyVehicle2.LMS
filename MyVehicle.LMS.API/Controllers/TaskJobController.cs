@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyVehicle.LMS.CORE.Data;
+using MyVehicle.LMS.CORE.DTO;
 using MyVehicle.LMS.CORE.Services;
 using System;
 using System.Collections.Generic;
@@ -52,7 +53,14 @@ namespace MyVehicle.LMS.API.Controllers
 
 
         }
-
+        [HttpGet]
+        [Route("TaskJobById/{UserId}")]
+        [ProducesResponseType(typeof(List<TaskJob>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<TaskJob> TaskJobById(int UserId)
+        {
+            return taskJobServices.TaskJobById(UserId);
+        }
     }
 
 }
