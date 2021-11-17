@@ -15,7 +15,7 @@ namespace MyVehicle.LMS.CORE.Repoisitory
         public List<Users> GetAllUsers();
         public Users GetAllUsersById(int id );
 
-        public List<GetDrivingLicenseDTO> GetDrivingLicense();
+        public List<GetDrivingLicenseDTO> GetDrivingLicense(int UserId);
         public List<ObtainFinancialReportsDTO> ObtainFinancialReports();
         public List<ViewUserContactInformationDTO> ViewUserContactInformation(ViewUserContactInformationDTO paymentDate);
 

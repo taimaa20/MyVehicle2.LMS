@@ -59,12 +59,12 @@ namespace MyVehicle.LMS.API.Controllers
         }
 
         [HttpGet]
-        [Route("GetDrivingLicense")]
+        [Route("GetDrivingLicense/{UserId}")]
         [ProducesResponseType(typeof(List<GetDrivingLicenseDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public List<GetDrivingLicenseDTO> GetDrivingLicense()
+        public List<GetDrivingLicenseDTO> GetDrivingLicense(int UserId)
         {
-            return usersService.GetDrivingLicense();
+            return usersService.GetDrivingLicense(UserId);
         }
         [HttpGet]
         [Route("ObtainFinancialReports")]

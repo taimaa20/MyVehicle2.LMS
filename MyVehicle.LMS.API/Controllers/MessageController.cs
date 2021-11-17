@@ -42,5 +42,13 @@ namespace MyVehicle.LMS.API.Controllers
         {
             return messageService.GetAllMessage();
         }
+
+        [HttpGet]
+        [Route("GetMessageByUserId/{UserId}")]
+        
+        public List<Message> GetMessageByUserId(int UserId)
+        {
+            return messageService.GetMessageByUserId(UserId);
+        }
     }
 }

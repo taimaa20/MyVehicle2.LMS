@@ -130,12 +130,12 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return result.ToList();
         }
 
-     
 
-        public List<TechnecalReportJoinDto> TechnecalReport(TechnecalReport technecalReport)
+
+        public List<TechnecalReportJoinDto> TechnecalReport(int UserId)
         {
             var VehParameter = new DynamicParameters();
-            VehParameter.Add("@VehicleId", technecalReport.VehicleId, dbType: DbType.String, direction: System.Data.ParameterDirection.Input);
+            VehParameter.Add("@UserId", UserId, dbType: DbType.String, direction: System.Data.ParameterDirection.Input);
 
             IEnumerable<TechnecalReportJoinDto>
           Result = dBContext.Connection.Query<TechnecalReportJoinDto>("TechnecalReport", VehParameter, commandType: CommandType.StoredProcedure);
