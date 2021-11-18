@@ -32,7 +32,7 @@ namespace MyVehicle.LMS.CORE.Repoisitory
      
  
        // TechnecalReport
-        public List<TechnecalReportJoinDto> TechnecalReport(TechnecalReport technecalReport);
+        public List<TechnecalReportJoinDto> TechnecalReport(int UserId);
 
 
 

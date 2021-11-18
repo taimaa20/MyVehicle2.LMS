@@ -124,10 +124,13 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return true;
         }
 
-        public List<GetDrivingLicenseDTO> GetDrivingLicense()
+        public List<GetDrivingLicenseDTO> GetDrivingLicense(int UserId)
         {
+            var Parameters = new DynamicParameters();
+
+            Parameters.Add("@UserId", UserId, dbType: DbType.Int32, direction: ParameterDirection.Input);
             IEnumerable<GetDrivingLicenseDTO>
-            Reselt = dBContext.Connection.Query<GetDrivingLicenseDTO>("GetDrivingLicense", commandType: CommandType.StoredProcedure);
+            Reselt = dBContext.Connection.Query<GetDrivingLicenseDTO>("GetDrivingLicense", Parameters, commandType: CommandType.StoredProcedure);
             return Reselt.ToList();
 
         }

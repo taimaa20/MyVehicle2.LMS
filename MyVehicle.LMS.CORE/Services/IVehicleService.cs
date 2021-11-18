@@ -28,8 +28,8 @@ namespace MyVehicle.LMS.CORE.Services
 
         // TechnecalReport
 
-   
-        public List<TechnecalReportJoinDto> TechnecalReport(TechnecalReport technecalReport);
+
+        public List<TechnecalReportJoinDto> TechnecalReport(int UserId);
 
 
 

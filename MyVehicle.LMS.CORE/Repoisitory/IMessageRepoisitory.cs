@@ -11,5 +11,8 @@ namespace MyVehicle.LMS.CORE.Repoisitory
         public bool UpdateMessage(Message Mes);
         public bool DeleteMessage(int MessageId);
         public List<Message> GetAllMessage();
+
+        public List<Message> GetMessageByUserId(int UserId);
+
     }
 }

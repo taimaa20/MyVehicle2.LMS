@@ -33,6 +33,9 @@ namespace MyVehicle.LMS.INFRA.Services
             return messageRepoisitory.GetAllMessage();
         }
 
-      
+        public List<Message> GetMessageByUserId(int UserId)
+        {
+            return messageRepoisitory.GetMessageByUserId(UserId);
+        }
     }
 }

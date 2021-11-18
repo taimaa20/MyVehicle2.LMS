@@ -58,9 +58,9 @@ namespace MyVehicle.LMS.INFRA.Services
             return vehicleRepoisitory.VehicleSystemReportBetween(vehicleSystemReportBetween);
         }
 
-        public List<TechnecalReportJoinDto> TechnecalReport(TechnecalReport technecalReport)
+        public List<TechnecalReportJoinDto> TechnecalReport(int UserId)
         {
-            return vehicleRepoisitory.TechnecalReport(technecalReport);
+            return vehicleRepoisitory.TechnecalReport(UserId);
         }
     }
 }
