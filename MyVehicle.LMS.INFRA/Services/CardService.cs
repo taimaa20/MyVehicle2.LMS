@@ -24,9 +24,9 @@ namespace MyVehicle.LMS.INFRA.Services
             return cardsRepoisitory.GetAllCards();
         }
 
-        public Cards GetCardById(Cards cards)
+        public List<Cards> GetCardById(int UserId)
         {
-            return cardsRepoisitory.GetCardById(cards);
+            return cardsRepoisitory.GetCardById(UserId);
         }
 
         public bool InsertCards(Cards cards)
