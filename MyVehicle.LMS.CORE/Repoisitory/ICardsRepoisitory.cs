@@ -11,6 +11,7 @@ namespace MyVehicle.LMS.CORE.Repoisitory
         public bool UpdateCards(Cards cards);
         public bool DeleteCards(int id);
         public List<Cards> GetAllCards();
-        public Cards GetCardById(Cards cards);
+
+        public List<Cards> GetCardById(int UserId);
     }
 }

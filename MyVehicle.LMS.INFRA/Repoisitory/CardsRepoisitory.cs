@@ -33,13 +33,13 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return reselt.ToList();
         }
 
-        public Cards GetCardById(Cards cards)
+        public List<Cards> GetCardById(int UserId)
         {
             var Parameter = new DynamicParameters();
-            Parameter.Add("@CardId", cards.CardId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            Parameter.Add("@UserId", UserId, dbType: DbType.Int32, direction: ParameterDirection.Input);
             var reselt = dBContext.Connection.Query<Cards>("GetCardById", Parameter, commandType: CommandType.StoredProcedure);
 
-            return reselt.FirstOrDefault();
+            return reselt.ToList();
         }
 
         public bool InsertCards(Cards cards)

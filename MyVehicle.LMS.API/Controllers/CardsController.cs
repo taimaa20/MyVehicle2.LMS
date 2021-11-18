@@ -34,12 +34,12 @@ namespace MyVehicle.LMS.API.Controllers
             return cardService.GetAllCards();
         }
         [HttpGet]
-        [Route("GetCardById")]
+        [Route("GetCardById/{UserId}")]
         [ProducesResponseType(typeof(List<Cards>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Cards GetCardById(Cards cards)
+        public List<Cards> GetCardById(int UserId)
         {
-            return cardService.GetCardById(cards);
+            return cardService.GetCardById(UserId);
         }
         [HttpPost]
         [ProducesResponseType(typeof(List<Cards>), StatusCodes.Status200OK)]
