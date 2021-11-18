@@ -58,6 +58,13 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return Result.ToList();
         }
 
-       
+        public List<Message> GetMessageByUserId(int UserId)
+        {
+            var MesParameter = new DynamicParameters();
+            MesParameter.Add("@UserId", UserId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            IEnumerable<Message>
+            Result = dBContext.Connection.Query<Message>("GetMessageByUserId", MesParameter, commandType: CommandType.StoredProcedure);
+            return Result.ToList();
+        }
     }
 }

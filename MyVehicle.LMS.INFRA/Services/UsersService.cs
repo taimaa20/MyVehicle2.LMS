@@ -65,9 +65,9 @@ namespace MyVehicle.LMS.INFRA.Services
         {
             return usersRepoisitory.UpdateUsers(users);
         }
-        public List<GetDrivingLicenseDTO> GetDrivingLicense()
+        public List<GetDrivingLicenseDTO> GetDrivingLicense(int UserId)
         {
-            return usersRepoisitory.GetDrivingLicense();
+            return usersRepoisitory.GetDrivingLicense(UserId);
         }
         public List<ObtainFinancialReportsDTO> ObtainFinancialReports()
         {
