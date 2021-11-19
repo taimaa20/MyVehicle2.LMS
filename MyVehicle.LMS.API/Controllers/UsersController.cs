@@ -78,7 +78,7 @@ namespace MyVehicle.LMS.API.Controllers
         [Route("ViewUserContactInformation")]
         [ProducesResponseType(typeof(List<ViewUserContactInformationDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public List<ViewUserContactInformationDTO> ViewUserContactInformation([FromBody] ViewUserContactInformationDTO paymentDate)
+        public List<ViewUserContactInformationDTO> ViewUserContactInformation([FromBody] SearchingForVehiclesLicenseExpiry paymentDate)
         {
             return usersService.ViewUserContactInformation(paymentDate);
         }
@@ -113,26 +113,26 @@ namespace MyVehicle.LMS.API.Controllers
         }
 
 
-        [HttpPost]
-        [Route("SearchByUserId")]
+        [HttpGet]
+        [Route("SearchByUserId/{UserId}")]
         [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public List<VehiclesUsers> SearchByUserId([FromBody]SearchByUserId searchByUserId)
+        public List<VehiclesUsers> SearchByUserId(int UserId)
         {
-            return usersService.SearchByUserId(searchByUserId);
+            return usersService.SearchByUserId(UserId);
 
         }
 
        
 
         [HttpGet]
-        [Route("CountUserCars")]
+        [Route("CountUserCars/{UserId}")]
 
         [ProducesResponseType(typeof(List<Users>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IEnumerable<CountUserCars> CountUserCars([FromBody]SearchByUserId searchByUserId)
+        public IEnumerable<CountUserCars> CountUserCars(int UserId)
         {
-            return usersService.CountUserCars(searchByUserId);
+            return usersService.CountUserCars(UserId);
 
         }
         [HttpGet]

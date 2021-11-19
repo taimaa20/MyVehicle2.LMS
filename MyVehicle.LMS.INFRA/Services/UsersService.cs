@@ -16,9 +16,9 @@ namespace MyVehicle.LMS.INFRA.Services
             this.usersRepoisitory = usersRepoisitory;
         }
 
-        public IEnumerable<CountUserCars> CountUserCars(SearchByUserId searchByUserId)
+        public IEnumerable<CountUserCars> CountUserCars(int UserId)
         {
-            return usersRepoisitory.CountUserCars(searchByUserId);
+            return usersRepoisitory.CountUserCars(UserId);
         }
 
         public bool DeleteUsers(int id)
@@ -56,9 +56,9 @@ namespace MyVehicle.LMS.INFRA.Services
             return usersRepoisitory.NumberOfUsers();
         }
 
-        public List<VehiclesUsers> SearchByUserId(SearchByUserId searchByUserId)
+        public List<VehiclesUsers> SearchByUserId(int UserId)
         {
-            return usersRepoisitory.SearchByUserId(searchByUserId);
+            return usersRepoisitory.SearchByUserId(UserId);
         }
 
         public bool UpdateUsers(Users users)
@@ -73,7 +73,7 @@ namespace MyVehicle.LMS.INFRA.Services
         {
             return usersRepoisitory.ObtainFinancialReports();
         }
-        public List<ViewUserContactInformationDTO> ViewUserContactInformation(ViewUserContactInformationDTO paymentDate)
+        public List<ViewUserContactInformationDTO> ViewUserContactInformation(SearchingForVehiclesLicenseExpiry paymentDate)
         {
             return usersRepoisitory.ViewUserContactInformation(paymentDate);
         }

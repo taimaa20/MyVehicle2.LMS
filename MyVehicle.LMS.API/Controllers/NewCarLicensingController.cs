@@ -21,7 +21,7 @@ namespace MyVehicle.LMS.API.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(List<NewCarLicensing>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public bool InsertNewCarLicensing([FromBody] NewCarLicensing newCarLicensing)
+        public IEnumerable<PaymentValue> InsertNewCarLicensing([FromBody] NewCarLicensing newCarLicensing)
         {
             return newCarLicensingService.InsertNewCarLicensing(newCarLicensing);
         }

@@ -7,6 +7,6 @@ namespace MyVehicle.LMS.CORE.Services
 {
  public   interface INewCarLicensingService
     {
-        public bool InsertNewCarLicensing(NewCarLicensing newCarLicensing);
+        public IEnumerable<PaymentValue> InsertNewCarLicensing(NewCarLicensing newCarLicensing);
     }
 }
