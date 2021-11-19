@@ -7,6 +7,6 @@ namespace MyVehicle.LMS.CORE.Repoisitory
 {
   public   interface INewCarLicensingRepository
     {
-        public bool InsertNewCarLicensing(NewCarLicensing newCarLicensing);
+        public IEnumerable<PaymentValue> InsertNewCarLicensing(NewCarLicensing newCarLicensing);
     }
 }

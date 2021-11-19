@@ -7,6 +7,7 @@ namespace MyVehicle.LMS.CORE.DTO
    public class ViewUserContactInformationDTO
     {
         //users//
+        public int UserId { get; set; }
         public string FullName { get; set; }
         public string UserImage { get; set; }
         public bool Gender { get; set; }

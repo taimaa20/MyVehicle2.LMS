@@ -19,10 +19,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             this.dBContext = dBContext;
         }
 
-        public IEnumerable<CountUserCars> CountUserCars(SearchByUserId searchByUserId)
+        public IEnumerable<CountUserCars> CountUserCars(int UserId)
         {
                 var par = new DynamicParameters();
-                par.Add("@UserId",searchByUserId.UserId, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
+                par.Add("@UserId",UserId, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
                 IEnumerable<CountUserCars> result = dBContext.Connection.Query<CountUserCars>("CountUserCars", par, commandType: CommandType.StoredProcedure);
                 return result.ToList();
 
@@ -93,10 +93,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return result;
         }
 
-        public List<VehiclesUsers> SearchByUserId(SearchByUserId searchByUserId)
+        public List<VehiclesUsers> SearchByUserId(int UserId)
         {
             var Parameter = new DynamicParameters();
-            Parameter.Add("@UserId", searchByUserId.UserId, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
+            Parameter.Add("@UserId", UserId, dbType: DbType.Int32, direction: System.Data.ParameterDirection.Input);
 
             IEnumerable<VehiclesUsers> result = dBContext.Connection.Query<VehiclesUsers>("SearchByUserId", Parameter, commandType: CommandType.StoredProcedure);
 
@@ -141,10 +141,11 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return Reselt.ToList();
 
         }
-        public List<ViewUserContactInformationDTO> ViewUserContactInformation(ViewUserContactInformationDTO paymentDate)
+        public List<ViewUserContactInformationDTO> ViewUserContactInformation(SearchingForVehiclesLicenseExpiry paymentDate)
         {
             var UParameter = new DynamicParameters();
-            UParameter.Add("@PaymentDate", paymentDate.PaymentDate, dbType: DbType.DateTime, direction: ParameterDirection.Input);
+            UParameter.Add("@DateFrom", paymentDate.DateFrom, dbType: DbType.DateTime, direction: ParameterDirection.Input);
+            UParameter.Add("@DateTo", paymentDate.DateTo, dbType: DbType.DateTime, direction: ParameterDirection.Input);
             var Reselt = dBContext.Connection.Query<ViewUserContactInformationDTO>("ViewUserContactInformation", UParameter, commandType: CommandType.StoredProcedure);
 
             return Reselt.ToList();

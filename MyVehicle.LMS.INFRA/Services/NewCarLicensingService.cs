@@ -16,7 +16,7 @@ namespace MyVehicle.LMS.INFRA.Services
             this.newCarLicensingRepository = newCarLicensingRepository;
         }
 
-        public bool InsertNewCarLicensing(NewCarLicensing newCarLicensing)
+        public IEnumerable<PaymentValue> InsertNewCarLicensing(NewCarLicensing newCarLicensing)
         {
             return newCarLicensingRepository.InsertNewCarLicensing(newCarLicensing);
         }

@@ -17,7 +17,7 @@ namespace MyVehicle.LMS.CORE.Repoisitory
 
         public List<GetDrivingLicenseDTO> GetDrivingLicense(int UserId);
         public List<ObtainFinancialReportsDTO> ObtainFinancialReports();
-        public List<ViewUserContactInformationDTO> ViewUserContactInformation(ViewUserContactInformationDTO paymentDate);
+        public List<ViewUserContactInformationDTO> ViewUserContactInformation(SearchingForVehiclesLicenseExpiry paymentDate);
 
 
         //Retrieve Number of users //Admin
@@ -30,9 +30,9 @@ namespace MyVehicle.LMS.CORE.Repoisitory
         public List<EmployeesSalaries> EmployeesSalaries();
 
         //Search By UserId  //Users
-        public List<VehiclesUsers> SearchByUserId(SearchByUserId searchByUserId);
+        public List<VehiclesUsers> SearchByUserId(int UserId);
         //CountUserCars //Users
-        public IEnumerable<CountUserCars> CountUserCars(SearchByUserId searchByUserId);
+        public IEnumerable<CountUserCars> CountUserCars(int UserId);
         //List of Employee in Admin
         public List<ListOfEmployees> GetListOfEmployees();
         // Retrive Number of AllUsers

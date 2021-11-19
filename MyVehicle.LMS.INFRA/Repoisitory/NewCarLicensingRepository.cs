@@ -20,7 +20,7 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
 
         }
 
-            public bool InsertNewCarLicensing(NewCarLicensing newCarLicensing)
+            public IEnumerable<PaymentValue> InsertNewCarLicensing(NewCarLicensing newCarLicensing)
         {
 
             var p = new DynamicParameters();
@@ -44,8 +44,10 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             p.Add("@UserId", newCarLicensing.UserId, dbType: DbType.Int32, direction: ParameterDirection.Input);
             p.Add("@LicensingId", newCarLicensing.LicensingId, dbType: DbType.Int32, direction: ParameterDirection.Input);
             p.Add("@InsuranceId", newCarLicensing.InsuranceId, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            var result = dBContext.Connection.ExecuteAsync("NewCarLicensing", p, commandType: CommandType.StoredProcedure);
-            return true;
+
+            IEnumerable<PaymentValue> result = dBContext.Connection.Query<PaymentValue>("NewCarLicensing", p, commandType: CommandType.StoredProcedure);
+            return result;
+            
 
              
         }
