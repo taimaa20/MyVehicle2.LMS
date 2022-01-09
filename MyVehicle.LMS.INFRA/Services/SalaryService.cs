@@ -27,9 +27,9 @@ namespace MyVehicle.LMS.INFRA.Services
             return salaryRepoisitory.GetAllSalary();
         }
 
-        public Salary1 GetSalaryById(Salary1 salary)
+        public List<Salary1> GetSalaryById(int UserId)
         {
-            return salaryRepoisitory.GetSalaryById(salary);
+            return salaryRepoisitory.GetSalaryById(UserId);
         }
 
         public bool InsertSalary(Salary1 salary)

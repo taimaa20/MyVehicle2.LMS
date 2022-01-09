@@ -19,8 +19,8 @@ namespace MyVehicle.LMS.API.Controllers
             this.mailService = mailService;
         }
 
-        [HttpGet("Send")]
-        public bool Send([FromForm] MailRequest request)
+        [HttpPost("Send")]
+        public bool Send([FromBody] MailRequest request)
         {
 
             return mailService.SendEmailAsync(request);
