@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Text;
 //using System.Net.Mail;
 using MailKit.Net.Smtp;
+using System.Security.Authentication;
+using MailKit.Security;
 
 namespace MyVehicle.LMS.INFRA.Services
 {
@@ -21,14 +23,14 @@ namespace MyVehicle.LMS.INFRA.Services
         {
             MimeMessage message = new MimeMessage();
 
+            
 
-
-            MailboxAddress from = new MailboxAddress("Jordan Islamic Bank", "thuraiasaleh95@gmail.com");
+            MailboxAddress from = new MailboxAddress("Jordan Islamic Bank", "jib@islamicbank.com.jo");
             message.From.Add(from);
 
 
 
-            MailboxAddress to = new MailboxAddress("Taimaahamarneh1@gmail.com", "" + "Taimaahamarneh1@gmail.com" + "");
+            MailboxAddress to = new MailboxAddress(mailRequest.ToEmail, "" + mailRequest.ToEmail + "");
             message.To.Add(to);
 
 
@@ -39,7 +41,7 @@ namespace MyVehicle.LMS.INFRA.Services
             Random rnd = new Random();
             var code = rnd.Next(0000, 9999);
             BodyBuilder bodyBuilder = new BodyBuilder();
-            bodyBuilder.HtmlBody = "<h3>Hi " + "Taima" + " " + " , </h3>" +
+            bodyBuilder.HtmlBody = 
             "<p>You are receiving this email because Your Payment Completed Successfully </p>" +
             
             "  Regards" +
@@ -50,8 +52,10 @@ namespace MyVehicle.LMS.INFRA.Services
 
             using (var clinte = new SmtpClient())
             {
-                clinte.Connect("smtp.gmail.com", 587, false);
-                clinte.Authenticate("thuriasaleh95@gmail.com", "**************");
+                
+                clinte.CheckCertificateRevocation = false;
+                clinte.Connect("smtp.gmail.com", 587, SecureSocketOptions.Auto);
+                clinte.Authenticate("thuriasaleh95@gmail.com","***************");
 
 
 

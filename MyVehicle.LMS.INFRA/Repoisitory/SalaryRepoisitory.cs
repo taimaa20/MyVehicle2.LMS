@@ -36,12 +36,12 @@ namespace MyVehicle.LMS.INFRA.Repoisitory
             return reselt.ToList();
         }
 
-        public Salary1 GetSalaryById(Salary1 salary)
+        public List<Salary1> GetSalaryById(int UserId)
         {
             var Parameter = new DynamicParameters();
-            Parameter.Add("@SalaryId", salary.SalaryId, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            var reselt = dBContext.Connection.Query<Salary1>("GetCardById", Parameter, commandType: CommandType.StoredProcedure);
-            return reselt.FirstOrDefault();
+            Parameter.Add("@UserId", UserId, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            var reselt = dBContext.Connection.Query<Salary1>("GetSalaryById", Parameter, commandType: CommandType.StoredProcedure);
+            return reselt.ToList();
         }
 
         public bool InsertSalary(Salary1 salary)

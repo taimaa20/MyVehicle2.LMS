@@ -12,7 +12,7 @@ namespace MyVehicle.LMS.CORE.Services
         public bool UpdateSalary(Salary1 salary);
         public bool DeleteSalary(Salary1 salary);
         public List<Salary1> GetAllSalary();
-        public Salary1 GetSalaryById(Salary1 salary);
+        public List<Salary1> GetSalaryById(int UserId);
 
         //Get Total Month Salaries For Employees //Admin
         public IEnumerable<TotalMonthSalaries> TotalMonthSalaries(SearchByMonthSalary searchByMonthSalary);

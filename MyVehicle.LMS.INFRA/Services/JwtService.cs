@@ -35,7 +35,8 @@ namespace MyVehicle.LMS.INFRA.Services
                     {
                         new Claim(ClaimTypes.Name, result.Username),
                         new Claim(ClaimTypes.Role, result.RoleName),
-                        new Claim(ClaimTypes.Email,result.UserId.ToString())
+                        new Claim(ClaimTypes.Email,result.UserId.ToString()),
+                        new Claim(ClaimTypes.NameIdentifier,result.Email)
                     }),
                     Expires = DateTime.UtcNow.AddHours(1),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenkey), SecurityAlgorithms.HmacSha256Signature),

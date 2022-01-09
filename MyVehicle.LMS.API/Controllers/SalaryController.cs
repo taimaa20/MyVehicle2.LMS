@@ -35,12 +35,12 @@ namespace MyVehicle.LMS.API.Controllers
             return salaryService.GetAllSalary();
         }
         [HttpGet]
-        [Route("GetSalaryById")]
+        [Route("GetSalaryById/{UserId}")]
         [ProducesResponseType(typeof(List<Salary1>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Salary1 GetSalaryById(Salary1 Salary)
+        public List<Salary1> GetSalaryById(int UserId)
         {
-            return salaryService.GetSalaryById(Salary);
+            return salaryService.GetSalaryById(UserId);
         }
         [HttpPost]
         [ProducesResponseType(typeof(List<Salary1>), StatusCodes.Status200OK)]
